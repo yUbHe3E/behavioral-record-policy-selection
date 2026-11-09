@@ -1,0 +1,22 @@
+{
+  "LLM-Summary": {
+    "recorded_usage_count": 742,
+    "input_tokens_mean": 1237.0646900269542
+  },
+  "Relational-LinkBroken": {
+    "recorded_usage_count": 766,
+    "input_tokens_mean": 4001.406005221932
+  },
+  "Relational-Linked": {
+    "recorded_usage_count": 764,
+    "input_tokens_mean": 3999.4070680628274
+  },
+  "Event-Caption": {
+    "recorded_usage_count": 765,
+    "input_tokens_mean": 10202.349019607844
+  },
+  "FullTrace-Control": {
+    "recorded_usage_count": 765,
+    "input_tokens_mean": 9572.41568627451
+  }
+}

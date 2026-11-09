@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript and this versioned software release."
+title: "Relational Behavioral Records for Requirement-Conditioned Language Model Policy Selection"
+type: software
+authors:
+  - name: "Behavioral Record Policy Selection contributors"
+version: 1.0.0
+date-released: 2026-11-09
+repository-code: "https://github.com/yUbHe3E/behavioral-record-policy-selection"
+license: MIT

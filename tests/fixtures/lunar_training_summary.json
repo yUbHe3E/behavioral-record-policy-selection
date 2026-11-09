@@ -1,0 +1,2103 @@
+{
+  "api_calls": 0,
+  "candidate_count": 45,
+  "candidate_rows": [
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 50000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_d804c20f9023",
+      "chain_elapsed_seconds": 10.640999999945052,
+      "checkpoint_seconds": 9.640999999945052,
+      "checkpoint_timestep_private": 50000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5101/ll_candidate_d804c20f9023_step_50000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "60a4bc5e0a39dbc2db1f",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 578.6875,
+            "mean_return": -28.239375000000003,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 402.75,
+            "mean_return": -166.990625,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 161.25,
+            "mean_return": -248.09875,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 115.5175715007416,
+        "mean_length": 380.8958333333333,
+        "mean_return": -147.77643163428863,
+        "minimum_return": -524.046470927372,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_d804c20f9023",
+        "return_standard_deviation": 149.5209200602744
+      },
+      "validation_trajectory_hash": "50c13494d8c938fdfec08a0b29959bf885df26cd0435b8f075c8114e4e2df83b",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_d804c20f9023.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 100000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_50b7655ec34d",
+      "chain_elapsed_seconds": 22.54700000002049,
+      "checkpoint_seconds": 11.906000000075437,
+      "checkpoint_timestep_private": 100000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5101/ll_candidate_50b7655ec34d_step_100000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "b7a848ea29347a3884a3",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 647.75,
+            "mean_return": -182.213125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 492.5,
+            "mean_return": -237.041875,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 597.1875,
+            "mean_return": -231.33625,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -70.05321219050076,
+        "mean_length": 579.1458333333334,
+        "mean_return": -216.8636185880872,
+        "minimum_return": -314.65843193839396,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_50b7655ec34d",
+        "return_standard_deviation": 60.378432656291736
+      },
+      "validation_trajectory_hash": "b852d81e3c23174a659be0b57c1821bf1e2806b9f07539d9c566173cf3d94991",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_50b7655ec34d.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 200000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_b9d2f07c0c38",
+      "chain_elapsed_seconds": 44.85999999998603,
+      "checkpoint_seconds": 22.31299999996554,
+      "checkpoint_timestep_private": 200000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5101/ll_candidate_b9d2f07c0c38_step_200000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "f3aa47190aaa457e7b43",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -276.556875,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -321.19125,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 947.9375,
+            "mean_return": -302.28625,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -219.38586446050357,
+        "mean_length": 982.6458333333334,
+        "mean_return": -300.01094969780354,
+        "minimum_return": -403.9969253645066,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_b9d2f07c0c38",
+        "return_standard_deviation": 38.15092043708864
+      },
+      "validation_trajectory_hash": "842d6e5a2e316d4945f761a9ab414b60749579a5907ee90f45a10873506f21ca",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_b9d2f07c0c38.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 350000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_f44372d734af",
+      "chain_elapsed_seconds": 72.93799999996554,
+      "checkpoint_seconds": 28.07799999997951,
+      "checkpoint_timestep_private": 350000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5101/ll_candidate_f44372d734af_step_350000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "a534976a966ac41008c4",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -23.401875,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -83.29375,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -69.661875,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 8.839693434017995,
+        "mean_length": 1000.0,
+        "mean_return": -58.78567314462655,
+        "minimum_return": -152.90099030563664,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_f44372d734af",
+        "return_standard_deviation": 40.10790585195036
+      },
+      "validation_trajectory_hash": "686a5ce8b5cfb844adcc863d59cf1225c114393475f092bb18785143bc9bb00d",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_f44372d734af.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 500000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_b162a56f5052",
+      "chain_elapsed_seconds": 101.09400000004098,
+      "checkpoint_seconds": 28.156000000075437,
+      "checkpoint_timestep_private": 500000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5101/ll_candidate_b162a56f5052_step_500000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "f58fa707f80b54106a89",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": 1.166875,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -57.59625,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 966.5,
+            "mean_return": -8.493125000000001,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 187.0240485443037,
+        "mean_length": 988.8333333333334,
+        "mean_return": -21.640426407937763,
+        "minimum_return": -196.14056692167907,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_b162a56f5052",
+        "return_standard_deviation": 74.7475132591764
+      },
+      "validation_trajectory_hash": "3ed3103248b4b31d3037bf68d28eb87c10558a36e50f97a2f21fdb4e8080fed5",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_b162a56f5052.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 50000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_891335e0d556",
+      "chain_elapsed_seconds": 8.358999999938533,
+      "checkpoint_seconds": 8.34299999999348,
+      "checkpoint_timestep_private": 50000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5102/ll_candidate_891335e0d556_step_50000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "f8adc9569c3ec4c70e19",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 269.1875,
+            "mean_return": -1600.04,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 303.6875,
+            "mean_return": -1409.848125,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 223.0625,
+            "mean_return": -772.49625,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -31.797121906648243,
+        "mean_length": 265.3125,
+        "mean_return": -1260.7942909846818,
+        "minimum_return": -4728.413306555034,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_891335e0d556",
+        "return_standard_deviation": 886.8152328592831
+      },
+      "validation_trajectory_hash": "ec9db2df1a9336fd43274e748b49853aff71c49d69a998004f54177d911de3f5",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_891335e0d556.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 100000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_0dc43aba3139",
+      "chain_elapsed_seconds": 17.311999999918044,
+      "checkpoint_seconds": 8.952999999979511,
+      "checkpoint_timestep_private": 100000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5102/ll_candidate_0dc43aba3139_step_100000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "79de630ba6ed85f236cd",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 310.125,
+            "mean_return": -1236.69625,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 369.5625,
+            "mean_return": -1492.9675,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 284.375,
+            "mean_return": -959.345,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -204.6512839548804,
+        "mean_length": 321.3541666666667,
+        "mean_return": -1229.669135373979,
+        "minimum_return": -2571.531205322114,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_0dc43aba3139",
+        "return_standard_deviation": 611.2428569617872
+      },
+      "validation_trajectory_hash": "1211ceff4a2322037b519e41456aea5ffe966b4a098b1fd4544c22cfcb89d044",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_0dc43aba3139.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 200000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_0a51eb92e51c",
+      "chain_elapsed_seconds": 39.75,
+      "checkpoint_seconds": 22.438000000081956,
+      "checkpoint_timestep_private": 200000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5102/ll_candidate_0a51eb92e51c_step_200000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "1414913701358d362ce5",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 964.875,
+            "mean_return": -158.503125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -226.820625,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 966.6875,
+            "mean_return": -196.648125,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -86.08219270934913,
+        "mean_length": 977.1875,
+        "mean_return": -193.99092115430253,
+        "minimum_return": -280.90690033487607,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_0a51eb92e51c",
+        "return_standard_deviation": 49.98705727341249
+      },
+      "validation_trajectory_hash": "ace8a0d0b8212f1d07c02156a12ba3245b666516b3637df40d2a37fac98d75e9",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_0a51eb92e51c.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 350000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_2489c73e7651",
+      "chain_elapsed_seconds": 67.875,
+      "checkpoint_seconds": 28.125,
+      "checkpoint_timestep_private": 350000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5102/ll_candidate_2489c73e7651_step_350000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "b216481d3e246f1c01c1",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -19.109375,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -65.24,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -62.253750000000004,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 26.827160611485386,
+        "mean_length": 1000.0,
+        "mean_return": -48.86752747114026,
+        "minimum_return": -142.6058738666127,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_2489c73e7651",
+        "return_standard_deviation": 37.269721978818865
+      },
+      "validation_trajectory_hash": "2cc6e0b9f96424761e4dba6d736cca9e9cf712383bea8ab1a3f800016aa071f3",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_2489c73e7651.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 500000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_1d2acb02084f",
+      "chain_elapsed_seconds": 95.875,
+      "checkpoint_seconds": 28.0,
+      "checkpoint_timestep_private": 500000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5102/ll_candidate_1d2acb02084f_step_500000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "d921932787b74b427b8e",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 982.8125,
+            "mean_return": 32.889375,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 985.125,
+            "mean_return": -38.965625,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 952.625,
+            "mean_return": 0.49187499999999973,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 174.06798054307836,
+        "mean_length": 973.5208333333334,
+        "mean_return": -1.860885497164168,
+        "minimum_return": -156.2445339417002,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_1d2acb02084f",
+        "return_standard_deviation": 76.00783296272311
+      },
+      "validation_trajectory_hash": "3f968a7d367d7365b8d838ffcd5b6c0705e9c65b8c481c4ce72a29d919ed4144",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_1d2acb02084f.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 50000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_046ba7ff2d49",
+      "chain_elapsed_seconds": 16.25,
+      "checkpoint_seconds": 16.25,
+      "checkpoint_timestep_private": 50000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5103/ll_candidate_046ba7ff2d49_step_50000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "d97a871f042186c3faf8",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -297.71125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -317.578125,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 797.0,
+            "mean_return": -210.544375,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 60.25655458778999,
+        "mean_length": 932.3333333333334,
+        "mean_return": -275.2775196516142,
+        "minimum_return": -485.90245221650895,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_046ba7ff2d49",
+        "return_standard_deviation": 136.84379821063865
+      },
+      "validation_trajectory_hash": "e1f392791c9f883e77ec860d04de5d62a51c6bbb6cfd79f785ee936ec16210c0",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_046ba7ff2d49.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 100000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_4ccfec6f22e8",
+      "chain_elapsed_seconds": 27.343999999924563,
+      "checkpoint_seconds": 11.093999999924563,
+      "checkpoint_timestep_private": 100000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5103/ll_candidate_4ccfec6f22e8_step_100000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "737a5e55c3cfd8050101",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 445.0625,
+            "mean_return": -477.57125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 619.1875,
+            "mean_return": -745.4525,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 428.3125,
+            "mean_return": -479.851875,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -139.24860779413729,
+        "mean_length": 497.5208333333333,
+        "mean_return": -567.6252135455924,
+        "minimum_return": -1663.701558223997,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_4ccfec6f22e8",
+        "return_standard_deviation": 333.26507284756934
+      },
+      "validation_trajectory_hash": "790131f9453c381ba29b64fbc9363e63650ddd8e2542770c512e97ee193eeb28",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_4ccfec6f22e8.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 200000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_61350453dfc1",
+      "chain_elapsed_seconds": 45.76599999994505,
+      "checkpoint_seconds": 18.42200000002049,
+      "checkpoint_timestep_private": 200000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5103/ll_candidate_61350453dfc1_step_200000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "a10b1ec1c5f65129b788",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 567.625,
+            "mean_return": -233.0,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 744.25,
+            "mean_return": -338.7125,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 590.1875,
+            "mean_return": -308.831875,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -110.19421716703579,
+        "mean_length": 634.0208333333334,
+        "mean_return": -293.5144162706684,
+        "minimum_return": -453.374689927572,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_61350453dfc1",
+        "return_standard_deviation": 86.52860424177216
+      },
+      "validation_trajectory_hash": "5a32e6b83aa4ab65bcf0cc6b184bb66e6363ca4d000ef5964c97ae817e16c4cd",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_61350453dfc1.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 350000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_e8a59443a2d5",
+      "chain_elapsed_seconds": 74.01599999994505,
+      "checkpoint_seconds": 28.25,
+      "checkpoint_timestep_private": 350000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5103/ll_candidate_e8a59443a2d5_step_350000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "a5c8f504ec37bc526930",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -18.546875,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -80.47,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 970.5625,
+            "mean_return": -42.058125000000004,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 81.3001101321388,
+        "mean_length": 990.1875,
+        "mean_return": -47.02408609291937,
+        "minimum_return": -158.31266802737042,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_e8a59443a2d5",
+        "return_standard_deviation": 45.27329157077181
+      },
+      "validation_trajectory_hash": "4b00d3cf7c731e521ebc6798006c003711f78d67b63c11eaa11ff54384d0ca7c",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_e8a59443a2d5.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 500000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_fdb31076b659",
+      "chain_elapsed_seconds": 101.82799999997951,
+      "checkpoint_seconds": 27.81200000003446,
+      "checkpoint_timestep_private": 500000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C0/seed_5103/ll_candidate_fdb31076b659_step_500000.zip",
+      "training_profile_private": "LL-C0",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "c22848d5454e9b873552",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 985.875,
+            "mean_return": 19.023125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 987.375,
+            "mean_return": -30.887500000000003,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 910.5,
+            "mean_return": -4.048124999999999,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 166.86227142071408,
+        "mean_length": 961.25,
+        "mean_return": -5.304536511625881,
+        "minimum_return": -114.96295092217369,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_fdb31076b659",
+        "return_standard_deviation": 66.75894929073974
+      },
+      "validation_trajectory_hash": "6b14059dca86cb09f77c0e31d82b38e9cb62b461508a9502f57b427ef89a0659",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_fdb31076b659.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 50000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_f95b85e26586",
+      "chain_elapsed_seconds": 6.625,
+      "checkpoint_seconds": 6.625,
+      "checkpoint_timestep_private": 50000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5101/ll_candidate_f95b85e26586_step_50000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "de3d9ca281d136b6b266",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 76.625,
+            "mean_return": -71.5,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 69.875,
+            "mean_return": -112.226875,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 79.0,
+            "mean_return": -109.26124999999999,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 9.810021585840602,
+        "mean_length": 75.16666666666667,
+        "mean_return": -97.66288193557921,
+        "minimum_return": -295.38702224522626,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_f95b85e26586",
+        "return_standard_deviation": 76.65378114854784
+      },
+      "validation_trajectory_hash": "607671c13b05b876baf853ef36427f7f9b5ac454693afcc6c519ee04c9c257c5",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_f95b85e26586.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 100000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_d2a7ee00eac1",
+      "chain_elapsed_seconds": 20.468999999924563,
+      "checkpoint_seconds": 13.843999999924563,
+      "checkpoint_timestep_private": 100000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5101/ll_candidate_d2a7ee00eac1_step_100000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "5d81835f6caa2b9958d0",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 712.8125,
+            "mean_return": -385.52125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 726.25,
+            "mean_return": -871.685625,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 656.0625,
+            "mean_return": -656.3325,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 131.32981700067504,
+        "mean_length": 698.375,
+        "mean_return": -637.8455922674185,
+        "minimum_return": -4536.566628486515,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_d2a7ee00eac1",
+        "return_standard_deviation": 822.3206813251695
+      },
+      "validation_trajectory_hash": "97b7fd732b758ef3834351b7e982c01d09ebc35f8e1268c2b7f0a50cfb2759d7",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_d2a7ee00eac1.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 200000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_ec29c1055852",
+      "chain_elapsed_seconds": 38.29700000002049,
+      "checkpoint_seconds": 17.828000000095926,
+      "checkpoint_timestep_private": 200000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5101/ll_candidate_ec29c1055852_step_200000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "cbb7190c8b0f039a0661",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 486.5625,
+            "mean_return": -119.8775,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 602.5,
+            "mean_return": -177.03,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 587.125,
+            "mean_return": -173.950625,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -58.942821621410985,
+        "mean_length": 558.7291666666666,
+        "mean_return": -156.95251481302884,
+        "minimum_return": -293.0342240613589,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_ec29c1055852",
+        "return_standard_deviation": 65.13459884396845
+      },
+      "validation_trajectory_hash": "164b50e458b1a59c280a64666740c0b2c10c104b938fc139c777f69d3c7da318",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_ec29c1055852.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 350000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_7b401c988d40",
+      "chain_elapsed_seconds": 64.98399999993853,
+      "checkpoint_seconds": 26.686999999918044,
+      "checkpoint_timestep_private": 350000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5101/ll_candidate_7b401c988d40_step_350000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "c2729e0d0f657d6c8520",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 737.9375,
+            "mean_return": -92.685,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 933.25,
+            "mean_return": -145.308125,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 753.375,
+            "mean_return": -149.820625,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -25.42685212360175,
+        "mean_length": 808.1875,
+        "mean_return": -129.27187844994694,
+        "minimum_return": -251.21994380435777,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_7b401c988d40",
+        "return_standard_deviation": 65.57358910284948
+      },
+      "validation_trajectory_hash": "2b729d56987687ebba47040de46dc4e54ee3d6d3b12ac15aba149fbbb2c26f8e",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_7b401c988d40.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 500000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_cf8786c4039e",
+      "chain_elapsed_seconds": 93.67200000002049,
+      "checkpoint_seconds": 28.688000000081956,
+      "checkpoint_timestep_private": 500000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5101/ll_candidate_cf8786c4039e_step_500000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "e2ddc0ae11d7005d80fd",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -60.338125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -105.58375,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 954.9375,
+            "mean_return": -94.340625,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -27.109057405914385,
+        "mean_length": 984.9791666666666,
+        "mean_return": -86.75440191478947,
+        "minimum_return": -172.12391142863927,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_cf8786c4039e",
+        "return_standard_deviation": 34.99720455745448
+      },
+      "validation_trajectory_hash": "17fa411e359c3c3a16d6e807f635ed2cf63a8918a07cb7a775dd071de814ffdb",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_cf8786c4039e.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 50000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_ed8f6b06cd03",
+      "chain_elapsed_seconds": 6.515999999945052,
+      "checkpoint_seconds": 6.5,
+      "checkpoint_timestep_private": 50000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5102/ll_candidate_ed8f6b06cd03_step_50000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "3141cec69bc5e873a285",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 68.1875,
+            "mean_return": -142.500625,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 66.6875,
+            "mean_return": -145.175625,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 72.25,
+            "mean_return": -169.08625,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -50.5838471596383,
+        "mean_length": 69.04166666666667,
+        "mean_return": -152.25394495821092,
+        "minimum_return": -281.64274473414275,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_ed8f6b06cd03",
+        "return_standard_deviation": 48.35070601295089
+      },
+      "validation_trajectory_hash": "7cf1fcefcf0a4a2bea1e17306a55c83fd77a231d7134d8bbc132ab1018e39de1",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_ed8f6b06cd03.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 100000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_a17f11965162",
+      "chain_elapsed_seconds": 23.546999999904074,
+      "checkpoint_seconds": 17.030999999959022,
+      "checkpoint_timestep_private": 100000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5102/ll_candidate_a17f11965162_step_100000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "fdfcbf4b544bab0a59e4",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -335.06875,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -350.243125,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 936.0,
+            "mean_return": -300.35,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 30.42323478559078,
+        "mean_length": 978.6666666666666,
+        "mean_return": -328.55327135735826,
+        "minimum_return": -463.8467106376969,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_a17f11965162",
+        "return_standard_deviation": 86.22751480048449
+      },
+      "validation_trajectory_hash": "5cadffbe82555b0aa169801760fe370ef2febc10b496538a41f985df49d78162",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_a17f11965162.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 200000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_24de0346a318",
+      "chain_elapsed_seconds": 46.51599999994505,
+      "checkpoint_seconds": 22.969000000040978,
+      "checkpoint_timestep_private": 200000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5102/ll_candidate_24de0346a318_step_200000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "c3dfe2a542d60b8fbdc4",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -78.25125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -125.36125,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -122.29,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -32.59959099415319,
+        "mean_length": 1000.0,
+        "mean_return": -108.63422858458945,
+        "minimum_return": -205.2112354932854,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_24de0346a318",
+        "return_standard_deviation": 39.070027329528195
+      },
+      "validation_trajectory_hash": "44134f4e40945d390b32cd071c40f2ebcf38e8065bc3f42de4b6bbf3870cc436",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_24de0346a318.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 350000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_795c2cf75349",
+      "chain_elapsed_seconds": 75.28099999995902,
+      "checkpoint_seconds": 28.76500000001397,
+      "checkpoint_timestep_private": 350000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5102/ll_candidate_795c2cf75349_step_350000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "96bff9f59a394f236c0d",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -88.255,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -146.31312499999999,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -130.881875,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -53.87218080555482,
+        "mean_length": 1000.0,
+        "mean_return": -121.81698064771996,
+        "minimum_return": -221.69914379689166,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_795c2cf75349",
+        "return_standard_deviation": 38.644002986633566
+      },
+      "validation_trajectory_hash": "79e86cbd4e7b4c876f4c15e3af0b8cf199cd85e2a9b1a0def379424fe32912dc",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_795c2cf75349.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 500000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_9427ec8e8ff1",
+      "chain_elapsed_seconds": 101.45299999997951,
+      "checkpoint_seconds": 26.17200000002049,
+      "checkpoint_timestep_private": 500000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5102/ll_candidate_9427ec8e8ff1_step_500000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "bc6efe561dbfb889b3e0",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 733.3125,
+            "mean_return": -124.1025,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 848.6875,
+            "mean_return": -168.243125,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 716.75,
+            "mean_return": -118.825,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 139.15128778026076,
+        "mean_length": 766.25,
+        "mean_return": -137.05648530273533,
+        "minimum_return": -293.8750171411504,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_9427ec8e8ff1",
+        "return_standard_deviation": 86.94838626080036
+      },
+      "validation_trajectory_hash": "f4f8eea06dad643655c5cc2f4d4a7b6356bfbb897145f1ab15ade13fbc47afee",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_9427ec8e8ff1.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 50000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_c13f9ac2a74e",
+      "chain_elapsed_seconds": 11.343999999924563,
+      "checkpoint_seconds": 11.343999999924563,
+      "checkpoint_timestep_private": 50000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5103/ll_candidate_c13f9ac2a74e_step_50000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "27b83e8669ce3f5b5dba",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 557.375,
+            "mean_return": 106.704375,
+            "success_rate": 0.3125
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 502.125,
+            "mean_return": 73.3675,
+            "success_rate": 0.1875
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 361.875,
+            "mean_return": 49.715624999999996,
+            "success_rate": 0.1875
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 255.16989643867313,
+        "mean_length": 473.7916666666667,
+        "mean_return": 76.5953817206237,
+        "minimum_return": -123.6247271526031,
+        "official_return_200_success_rate": 0.22916666666666666,
+        "policy_id": "ll_candidate_c13f9ac2a74e",
+        "return_standard_deviation": 105.44774811764383
+      },
+      "validation_trajectory_hash": "14060c57af2fda09e1b7257e0837955fcd74f5ffd1393d08fb13233c98bda780",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_c13f9ac2a74e.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 100000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_4ffed892d9ef",
+      "chain_elapsed_seconds": 28.75,
+      "checkpoint_seconds": 17.406000000075437,
+      "checkpoint_timestep_private": 100000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5103/ll_candidate_4ffed892d9ef_step_100000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "727803bca42a1739c487",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -86.940625,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -125.46875,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -105.215625,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -24.674959139874172,
+        "mean_length": 1000.0,
+        "mean_return": -105.87541795696633,
+        "minimum_return": -193.29406581954916,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_4ffed892d9ef",
+        "return_standard_deviation": 35.17603406793603
+      },
+      "validation_trajectory_hash": "b2adaaafef13094509fcfb2890315eea288156141c7e31119c58334a75983bcb",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_4ffed892d9ef.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 200000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_1b4a94c85088",
+      "chain_elapsed_seconds": 48.04700000002049,
+      "checkpoint_seconds": 19.29700000002049,
+      "checkpoint_timestep_private": 200000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5103/ll_candidate_1b4a94c85088_step_200000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "4e970f9fe1250150bf6c",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 590.75,
+            "mean_return": -140.06125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 772.0,
+            "mean_return": -202.15875,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 632.625,
+            "mean_return": -193.8875,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -56.12295004140082,
+        "mean_length": 665.125,
+        "mean_return": -178.70266373783605,
+        "minimum_return": -326.27106621338135,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_1b4a94c85088",
+        "return_standard_deviation": 62.116005524044056
+      },
+      "validation_trajectory_hash": "a244a4d15492c448b8dcd9da8c1773ac00a1f068545e5299a9f6a9cb0e2c3714",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_1b4a94c85088.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 350000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_ca6a2c2e5a16",
+      "chain_elapsed_seconds": 74.31299999996554,
+      "checkpoint_seconds": 26.265999999945052,
+      "checkpoint_timestep_private": 350000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5103/ll_candidate_ca6a2c2e5a16_step_350000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "44c516847d3a451b6f7e",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 866.1875,
+            "mean_return": -88.60249999999999,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 768.125,
+            "mean_return": -190.610625,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 710.0625,
+            "mean_return": -139.19625,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 16.49060950520932,
+        "mean_length": 781.4583333333334,
+        "mean_return": -139.47036485171708,
+        "minimum_return": -280.8249885951517,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_ca6a2c2e5a16",
+        "return_standard_deviation": 84.23506937788365
+      },
+      "validation_trajectory_hash": "26db7e8627f3202cb9904e0c9ae39babbaa07bab78f355e237a027168da9c3ea",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_ca6a2c2e5a16.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 500000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_c4be7b417bce",
+      "chain_elapsed_seconds": 102.25,
+      "checkpoint_seconds": 27.93700000003446,
+      "checkpoint_timestep_private": 500000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C1/seed_5103/ll_candidate_c4be7b417bce_step_500000.zip",
+      "training_profile_private": "LL-C1",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "b419a81988aac75a4e23",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 962.1875,
+            "mean_return": -16.411875,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -65.246875,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 805.6875,
+            "mean_return": -19.314999999999998,
+            "success_rate": 0.0625
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 265.0965956087424,
+        "mean_length": 922.625,
+        "mean_return": -33.6577796681316,
+        "minimum_return": -214.19640978681167,
+        "official_return_200_success_rate": 0.020833333333333332,
+        "policy_id": "ll_candidate_c4be7b417bce",
+        "return_standard_deviation": 66.9521235664903
+      },
+      "validation_trajectory_hash": "24962e367e40789f8a571d279a03a3a54a1dd15d9e8ba75d87997e15da4ae8e6",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_c4be7b417bce.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 50000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_8d18e33e1560",
+      "chain_elapsed_seconds": 6.687999999965541,
+      "checkpoint_seconds": 6.687999999965541,
+      "checkpoint_timestep_private": 50000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5101/ll_candidate_8d18e33e1560_step_50000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "f96e5a1973e764b060be",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 79.125,
+            "mean_return": -71.738125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 70.8125,
+            "mean_return": -103.040625,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 81.5,
+            "mean_return": -110.91,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -9.266708160689845,
+        "mean_length": 77.14583333333333,
+        "mean_return": -95.22919586906458,
+        "minimum_return": -226.00142221700185,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_8d18e33e1560",
+        "return_standard_deviation": 51.540708661561254
+      },
+      "validation_trajectory_hash": "df7fa78ba3866d6647aaf76c584f7e704a6f5849d84be861a686ea14b25ef20f",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_8d18e33e1560.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 100000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_19c7e89930cb",
+      "chain_elapsed_seconds": 13.265999999945052,
+      "checkpoint_seconds": 6.577999999979511,
+      "checkpoint_timestep_private": 100000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5101/ll_candidate_19c7e89930cb_step_100000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "3cc61f97773f261123a4",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 68.1875,
+            "mean_return": -130.36875,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 66.8125,
+            "mean_return": -142.1,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 71.625,
+            "mean_return": -162.8525,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -70.08120011462412,
+        "mean_length": 68.875,
+        "mean_return": -145.10752228762954,
+        "minimum_return": -272.14039859894115,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_19c7e89930cb",
+        "return_standard_deviation": 39.92623643461035
+      },
+      "validation_trajectory_hash": "243d795db37755062b2edadddd83981bdfde35fae41c5734c94d9d76ea8dbfe7",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_19c7e89930cb.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 200000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_66caf1cfdb39",
+      "chain_elapsed_seconds": 35.14099999994505,
+      "checkpoint_seconds": 21.875,
+      "checkpoint_timestep_private": 200000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5101/ll_candidate_66caf1cfdb39_step_200000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "0096e0b7a43324cca433",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 966.4375,
+            "mean_return": -101.226875,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 857.375,
+            "mean_return": -191.45875,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 858.9375,
+            "mean_return": -137.60375,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -34.551047280562756,
+        "mean_length": 894.25,
+        "mean_return": -143.42964458981027,
+        "minimum_return": -298.5538644418521,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_66caf1cfdb39",
+        "return_standard_deviation": 67.35330505211026
+      },
+      "validation_trajectory_hash": "c3d59575fef41b64ec7e199a775f4de7ebd9eeab89a56df7c3065e5b58581781",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_66caf1cfdb39.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 350000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_02286830a81c",
+      "chain_elapsed_seconds": 63.06299999996554,
+      "checkpoint_seconds": 27.92200000002049,
+      "checkpoint_timestep_private": 350000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5101/ll_candidate_02286830a81c_step_350000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "2204edcadc4533a0ad75",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 988.5625,
+            "mean_return": -99.0175,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 885.875,
+            "mean_return": -191.229375,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 897.5,
+            "mean_return": -147.48,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -40.42125234054346,
+        "mean_length": 923.9791666666666,
+        "mean_return": -145.90976726253015,
+        "minimum_return": -267.92641149099734,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_02286830a81c",
+        "return_standard_deviation": 57.95316032151026
+      },
+      "validation_trajectory_hash": "6ef4db9d6800269c2c02edb57b61ed1ff9e98e3c52f09b734ac5a930ce5d1c40",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_02286830a81c.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 500000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_8882abff497b",
+      "chain_elapsed_seconds": 89.45299999997951,
+      "checkpoint_seconds": 26.39000000001397,
+      "checkpoint_timestep_private": 500000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5101/ll_candidate_8882abff497b_step_500000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5101,
+      "validation": {
+        "behavior_signature": "a6cb256d02da510868ac",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 734.8125,
+            "mean_return": -222.338125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 878.1875,
+            "mean_return": -294.440625,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 755.0625,
+            "mean_return": -281.211875,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -140.29277920558104,
+        "mean_length": 789.3541666666666,
+        "mean_return": -265.99686573404813,
+        "minimum_return": -406.68682092891476,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_8882abff497b",
+        "return_standard_deviation": 62.94937869691892
+      },
+      "validation_trajectory_hash": "3a4b4369f5980a20f9d8abce7b0e8a9913b6b535f09c8bce45aea02c08b6cb64",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_8882abff497b.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 50000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_7f90ab1a5b96",
+      "chain_elapsed_seconds": 6.672000000020489,
+      "checkpoint_seconds": 6.672000000020489,
+      "checkpoint_timestep_private": 50000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5102/ll_candidate_7f90ab1a5b96_step_50000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "8b7d5d75087587c5d9e9",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 87.375,
+            "mean_return": -452.281875,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 68.6875,
+            "mean_return": -154.690625,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 84.875,
+            "mean_return": -339.67125,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -76.22295334057331,
+        "mean_length": 80.3125,
+        "mean_return": -315.54839074829454,
+        "minimum_return": -2189.4848283868328,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_7f90ab1a5b96",
+        "return_standard_deviation": 375.4180251554673
+      },
+      "validation_trajectory_hash": "fcb0926db6f3e998446dd4fece8ec4d6c2fae32a36660fb8b6f65369927d869d",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_7f90ab1a5b96.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 100000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_982c23488f7b",
+      "chain_elapsed_seconds": 13.312000000034459,
+      "checkpoint_seconds": 6.64000000001397,
+      "checkpoint_timestep_private": 100000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5102/ll_candidate_982c23488f7b_step_100000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "3cdc566616deeaf7e1a2",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 70.8125,
+            "mean_return": -93.000625,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 70.125,
+            "mean_return": -81.606875,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 77.5625,
+            "mean_return": -101.066875,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 10.838675868999232,
+        "mean_length": 72.83333333333333,
+        "mean_return": -91.89178658153072,
+        "minimum_return": -286.38207537406754,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_982c23488f7b",
+        "return_standard_deviation": 50.81512812796266
+      },
+      "validation_trajectory_hash": "1ae0bc80f4dcef56e6749af8b01cb104da02caf34f794f122e86643b1e139f07",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_982c23488f7b.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 200000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_d81c6b4d3ae6",
+      "chain_elapsed_seconds": 32.578000000095926,
+      "checkpoint_seconds": 19.266000000061467,
+      "checkpoint_timestep_private": 200000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5102/ll_candidate_d81c6b4d3ae6_step_200000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "5ff4e8eb4b327d7f8407",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 765.5,
+            "mean_return": -64.173125,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 588.125,
+            "mean_return": -103.1825,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 641.3125,
+            "mean_return": -112.896875,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 187.4850539771465,
+        "mean_length": 664.9791666666666,
+        "mean_return": -93.41693825145917,
+        "minimum_return": -302.083943903099,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_d81c6b4d3ae6",
+        "return_standard_deviation": 104.87992057965677
+      },
+      "validation_trajectory_hash": "f039394f56d682b9e809098907feb2b9edeccae03ab51b679104d67fe940f1c7",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_d81c6b4d3ae6.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 350000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_d36edec4ad86",
+      "chain_elapsed_seconds": 61.34400000004098,
+      "checkpoint_seconds": 28.765999999945052,
+      "checkpoint_timestep_private": 350000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5102/ll_candidate_d36edec4ad86_step_350000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "dd32d8ee79a05548d7dc",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 990.6875,
+            "mean_return": -103.09,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -141.631875,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -130.719375,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -57.70170249000993,
+        "mean_length": 996.8958333333334,
+        "mean_return": -125.14709183658017,
+        "minimum_return": -206.40209599316813,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_d36edec4ad86",
+        "return_standard_deviation": 34.69726994615312
+      },
+      "validation_trajectory_hash": "14db198d753dad5cbdd7143774e48e51cfa474c9e38f88dec7df8a80b13979d1",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_d36edec4ad86.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 500000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_956182fb0e86",
+      "chain_elapsed_seconds": 89.17200000002049,
+      "checkpoint_seconds": 27.82799999997951,
+      "checkpoint_timestep_private": 500000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5102/ll_candidate_956182fb0e86_step_500000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5102,
+      "validation": {
+        "behavior_signature": "963b0f769fda1176ece5",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 881.875,
+            "mean_return": -128.706875,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 994.4375,
+            "mean_return": -131.505,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 895.625,
+            "mean_return": -161.124375,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -22.99014028883624,
+        "mean_length": 923.9791666666666,
+        "mean_return": -140.44545114333587,
+        "minimum_return": -302.69454899538835,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_956182fb0e86",
+        "return_standard_deviation": 60.93896228604309
+      },
+      "validation_trajectory_hash": "00f4802b072f3895860abc8b3a361d31072217b8ba66f5da8d2a9b7291cbe047",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_956182fb0e86.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 50000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_785ebb8b823f",
+      "chain_elapsed_seconds": 6.592999999993481,
+      "checkpoint_seconds": 6.577999999979511,
+      "checkpoint_timestep_private": 50000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5103/ll_candidate_785ebb8b823f_step_50000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "ad0bcaf61c6b05914f5b",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 68.0625,
+            "mean_return": -136.18625,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 66.0625,
+            "mean_return": -138.00125,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 71.5,
+            "mean_return": -168.85875,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -93.72291816457188,
+        "mean_length": 68.54166666666667,
+        "mean_return": -147.68225848109444,
+        "minimum_return": -269.135419082043,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_785ebb8b823f",
+        "return_standard_deviation": 38.15427268487778
+      },
+      "validation_trajectory_hash": "b9d869886e312d2ebffb5092d5613932919bd4353d6d6e7deab3b08fc9a1af05",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_785ebb8b823f.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 100000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_9f0f6dc517b4",
+      "chain_elapsed_seconds": 13.109000000054948,
+      "checkpoint_seconds": 6.516000000061467,
+      "checkpoint_timestep_private": 100000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5103/ll_candidate_9f0f6dc517b4_step_100000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "b8dba63995b77b3eb44f",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 69.75,
+            "mean_return": -81.44875,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 68.0,
+            "mean_return": -93.83,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 73.75,
+            "mean_return": -109.985,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -13.809428708072545,
+        "mean_length": 70.5,
+        "mean_return": -95.08734896541237,
+        "minimum_return": -241.5559338060031,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_9f0f6dc517b4",
+        "return_standard_deviation": 40.42026516230327
+      },
+      "validation_trajectory_hash": "f44f846d31417c3521b7c77a81997d8e7d4f0386c66911ed9a9a4a5c9c98a3c5",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_9f0f6dc517b4.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 200000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_0dd5d5615fdc",
+      "chain_elapsed_seconds": 30.26500000001397,
+      "checkpoint_seconds": 17.155999999959022,
+      "checkpoint_timestep_private": 200000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5103/ll_candidate_0dd5d5615fdc_step_200000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "67a052ef199f7ef21a10",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 440.625,
+            "mean_return": -112.950625,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 556.0,
+            "mean_return": -177.548125,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 473.6875,
+            "mean_return": -147.60875,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 94.10825794168514,
+        "mean_length": 490.1041666666667,
+        "mean_return": -146.03597420625763,
+        "minimum_return": -258.8519122059301,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_0dd5d5615fdc",
+        "return_standard_deviation": 64.55321301124022
+      },
+      "validation_trajectory_hash": "9cfa498b9d68634ab2d287e8a03ab2f8a819e561de5e477df881f587be2600a3",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_0dd5d5615fdc.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 350000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_6537a89122ba",
+      "chain_elapsed_seconds": 56.625,
+      "checkpoint_seconds": 26.35999999998603,
+      "checkpoint_timestep_private": 350000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5103/ll_candidate_6537a89122ba_step_350000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "5fda015a6a8a0465eef2",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 860.5625,
+            "mean_return": -98.2925,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 777.125,
+            "mean_return": -146.403125,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 721.1875,
+            "mean_return": -142.235,
+            "success_rate": 0.0
+          }
+        },
+        "episodes": 48,
+        "maximum_return": -25.59336067165205,
+        "mean_length": 786.2916666666666,
+        "mean_return": -128.97693719624212,
+        "minimum_return": -239.29347115626942,
+        "official_return_200_success_rate": 0.0,
+        "policy_id": "ll_candidate_6537a89122ba",
+        "return_standard_deviation": 62.73021263132025
+      },
+      "validation_trajectory_hash": "753748de3f37b3b030ef8f58ca0ee5d472055359074b197db9b86e052f42c245",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_6537a89122ba.jsonl"
+    },
+    {
+      "actual_device": "cpu",
+      "actual_model_timesteps": 500000,
+      "api_calls": 0,
+      "candidate_id": "ll_candidate_76c996eeddbe",
+      "chain_elapsed_seconds": 84.98400000005495,
+      "checkpoint_seconds": 28.359000000054948,
+      "checkpoint_timestep_private": 500000,
+      "heldout_evaluated": false,
+      "model_path_private": "models/LL-C2/seed_5103/ll_candidate_76c996eeddbe_step_500000.zip",
+      "training_profile_private": "LL-C2",
+      "training_seed_private": 5103,
+      "validation": {
+        "behavior_signature": "4d96a6f2909f10edb4af",
+        "context_metrics": {
+          "LL-C0": {
+            "episodes": 16,
+            "mean_length": 957.4375,
+            "mean_return": -9.5725,
+            "success_rate": 0.0
+          },
+          "LL-C1": {
+            "episodes": 16,
+            "mean_length": 1000.0,
+            "mean_return": -63.14375,
+            "success_rate": 0.0
+          },
+          "LL-C2": {
+            "episodes": 16,
+            "mean_length": 846.75,
+            "mean_return": 27.65625,
+            "success_rate": 0.125
+          }
+        },
+        "episodes": 48,
+        "maximum_return": 222.26694279426036,
+        "mean_length": 934.7291666666666,
+        "mean_return": -15.019420307883943,
+        "minimum_return": -117.11087824119407,
+        "official_return_200_success_rate": 0.041666666666666664,
+        "policy_id": "ll_candidate_76c996eeddbe",
+        "return_standard_deviation": 74.11960793256905
+      },
+      "validation_trajectory_hash": "871068c43eb8f3d1d4f3c8dec1b4dfc0457125b4d6308c2219267165e4ea7a65",
+      "validation_trajectory_path": "validation_trajectories/ll_candidate_76c996eeddbe.jsonl"
+    }
+  ],
+  "claim": "Training and validation create the frozen candidate pool using only official reward. They do not establish semantic selection improvement and make zero LLM API calls.",
+  "completed_at_utc": "2026-08-23T10:54:02.045433+00:00",
+  "gates_not_yet_evaluated": [
+    "minimum_metric_matched_pairs_per_requirement",
+    "minimum_hidden_oracle_determinate_coverage",
+    "maximum_metric_only_balanced_accuracy"
+  ],
+  "heldout_trajectories_collected": false,
+  "mode": "formal",
+  "official_return_200_success_rate_range": [
+    0.0,
+    0.22916666666666666
+  ],
+  "saturated_candidate_fraction": 0.0,
+  "schema_version": "lunarlander-policy-pool-training-summary-v1",
+  "status": "PASS_TRAINING_POOL_GATES_PENDING_PAIR_AND_ORACLE_GATES",
+  "training_chain_count": 9,
+  "training_gates": {
+    "api_calls_before_all_gates_pass": true,
+    "heldout_untouched": true,
+    "maximum_pool_saturation_rate": true,
+    "minimum_candidates": true,
+    "minimum_nonzero_policy_success_rate": true,
+    "minimum_unique_behavior_hashes": true
+  },
+  "unique_behavior_signatures": 45,
+  "wall_time_seconds": 859.8279999999795
+}

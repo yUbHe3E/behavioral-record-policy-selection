@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/behavior-record.json",
+  "title": "Objective-agnostic policy behavioral record",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "policy_id",
+    "protocol_hash",
+    "sample",
+    "episode_distributions",
+    "token_definitions",
+    "token_counts",
+    "transition_counts",
+    "trace_patterns",
+    "prefix_automaton",
+    "context_groups",
+    "coverage",
+    "record_hash"
+  ],
+  "properties": {
+    "schema_version": {"enum": ["behavioral-record-v1", "behavioral-record-v2"]},
+    "policy_id": {"type": "string"},
+    "protocol_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "sample": {"type": "object"},
+    "episode_distributions": {"type": "object"},
+    "token_definitions": {"type": "object"},
+    "token_counts": {"type": "array"},
+    "transition_counts": {"type": "array"},
+    "trace_patterns": {"type": "array"},
+    "prefix_automaton": {"type": "object"},
+    "context_groups": {"type": "array"},
+    "event_skeletons": {"type": "array"},
+    "coverage": {"type": "object"},
+    "record_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": "controlled-outer-confirmatory-plan-v3",
+  "status": "frozen_before_confirmatory_execution",
+  "frozen_at": "2026-08-22",
+  "stage": "independent_confirmatory",
+  "scenario_config": "configs/controlled_scenarios_confirmatory_v1.json",
+  "scenario_config_hash": "7818613225d5ef05bc1d0b2fc8d4fe93406e386ba233fd9e1cda39319edf301f",
+  "design": {
+    "population": 16,
+    "parents": 4,
+    "generations": 3,
+    "outer_seeds": [5, 6, 7, 8, 9, 10, 11, 12],
+    "scenarios": ["C1", "C2"],
+    "selector_arms": [
+      "B1-LLM-PBT",
+      "B2-FullTrace-LLM-PBT",
+      "Metric-PBT",
+      "Random-PBT",
+      "Oracle-PBT"
+    ],
+    "expected_requests_per_generation": 2048,
+    "expected_total_requests": 6144,
+    "old_pilot_in_primary_inference": false
+  },
+  "judge_freeze": {
+    "provider": "minimax",
+    "model": "MiniMax-M3",
+    "thinking": "disabled",
+    "temperature": 0.1,
+    "max_output_tokens": 512,
+    "response_format_type": "json_object",
+    "strict_semantic_parser": true,
+    "automatic_retries": 0,
+    "max_concurrency": 1
+  },
+  "structured_output_preflight": {
+    "source": "exploratory_pilot_generation_0_only",
+    "requests": 64,
+    "overall_strict_valid_rate_minimum": 0.95,
+    "minimum_arm_order_cell_valid_rate": 0.875,
+    "no_automatic_retry": true,
+    "no_http_429": true,
+    "failure_action": "stop_without_retry_or_formal_execution"
+  },
+  "primary_analysis": {
+    "endpoint_generation": 2,
+    "endpoint": "selected_parent_mean_semantic_violation_rate",
+    "contrast": "B1-LLM-PBT minus B2-FullTrace-LLM-PBT",
+    "positive_value_favors": "B2-FullTrace-LLM-PBT",
+    "unit_of_inference": "outer_seed_cluster",
+    "within_seed_aggregation": "arithmetic_mean_across_C1_and_C2",
+    "test": "exact_two_sided_paired_sign_flip",
+    "alpha": 0.05,
+    "confidence_interval": "10000_draw_outer_seed_cluster_bootstrap_95_percentile",
+    "bootstrap_seed": 20260822,
+    "multiplicity_adjustment": "none_one_frozen_primary_comparison"
+  },
+  "support_rule": {
+    "all_execution_and_quality_gates_pass": true,
+    "primary_mean_effect_strictly_positive": true,
+    "primary_exact_p_below_alpha": true,
+    "C1_descriptive_effect_strictly_positive": true,
+    "C2_descriptive_effect_strictly_positive": true
+  },
+  "quality_gates": {
+    "minimum_llm_valid_request_rate_per_generation_group": 0.8,
+    "scheduled_selection_graph_connected": true,
+    "unique_parent_count": 4,
+    "no_provider_budget_or_service_stop": true,
+    "no_automatic_resume_or_retry": true
+  },
+  "secondary_analyses": {
+    "baselines": ["Metric-PBT", "Random-PBT", "Oracle-PBT"],
+    "scenario_specific_effects": "descriptive",
+    "generation_trajectories": "descriptive_nonindependent",
+    "validity_and_order_sensitivity": "descriptive"
+  },
+  "claim_boundary": "Only the frozen generation-2 seed-cluster B2-versus-B1 analysis is confirmatory. The previous five-seed pilot and all baseline, scenario, and generation-wise analyses are excluded from the primary inference."
+}

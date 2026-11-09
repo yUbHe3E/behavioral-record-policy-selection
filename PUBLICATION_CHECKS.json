@@ -1,0 +1,44 @@
+{
+  "version": "v1.0.0",
+  "date": "2026-11-09",
+  "public_tests": {
+    "passed": 92,
+    "failed": 0
+  },
+  "offline_smoke": "PASS",
+  "offline_pipeline_and_summary": "PASS",
+  "portable_highway_dry_run": "PASS",
+  "result_figure_generation": "PASS",
+  "evidence_reproduction": {
+    "status": "PASS",
+    "network_calls": 0,
+    "original_primary": "exact primary contrasts",
+    "original_retention": "exact full-report match",
+    "representation_ablation": "exact numerical match",
+    "minimax_additional": "exact numerical match",
+    "deepseek_additional": "exact numerical match",
+    "compact_retention": "exact numerical match",
+    "lunar_minimax": "exact numerical match",
+    "lunar_deepseek": "exact numerical match",
+    "highway": "exact full-report match"
+  },
+  "network_model_calls": 0,
+  "new_training_runs": 0,
+  "trained_weights_included": false,
+  "data_redaction": "Host paths and transport/account metadata; frozen request bytes unchanged",
+  "original_source_retained": true,
+  "fresh_source_checkout_tests": {
+    "passed": 90,
+    "skipped": 2,
+    "skip_reason": "The two frozen-input integration tests require the separately released evidence."
+  },
+  "publication_scan": {
+    "source_files": 137,
+    "evidence_files": 433,
+    "scan": "PASS",
+    "metadata_redacted_files": 6,
+    "byte_identical_request_files": 74,
+    "archive_bytes": 311376711,
+    "archive_sha256": "8bfaae05b8f07aaa2c34fe877942d60d5bd2ceab8451684f2c0ba6fbf8d36c29"
+  }
+}

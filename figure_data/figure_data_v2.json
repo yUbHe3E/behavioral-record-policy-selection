@@ -1,0 +1,139 @@
+{
+  "schema_version": "manuscript-figure-data-v2",
+  "frozen_on": "2026-08-24",
+  "reader_labels": {
+    "C1": "Recovery-Contingent Repetition",
+    "C2": "Necessity-Conditioned Safety and State Preservation",
+    "B1": "Aggregate Summary",
+    "B2-FullTrace": "FullTrace Record",
+    "B2-DenseTrace": "DenseTrace Record",
+    "LL-R1": "Recovery-Aware Low-Impact Landing",
+    "LL-R2": "Worst-Context Robust Landing"
+  },
+  "controlled_static": {
+    "source": "outputs/controlled_confirmatory_20260822_v1/minimax_m3_static_v1/evaluation.json",
+    "scenarios": {
+      "C1": {
+        "b1_reference_rate": 0.0,
+        "fulltrace_reference_rate": 0.8048780487804879,
+        "difference": 0.8048780487804879,
+        "difference_ci95": [0.7398373983739838, 0.8658536585365854],
+        "b1_valid_rate": 0.9207317073170732,
+        "fulltrace_valid_rate": 0.8902439024390244,
+        "b1_directional_coverage": 0.0024509803921568627,
+        "fulltrace_directional_coverage": 0.8872549019607843,
+        "b1_conditional_directional_accuracy": 0.0,
+        "fulltrace_conditional_directional_accuracy": 0.9972375690607734
+      },
+      "C2": {
+        "b1_reference_rate": 0.06707317073170732,
+        "fulltrace_reference_rate": 0.9044715447154471,
+        "difference": 0.8373983739837398,
+        "difference_ci95": [0.782520325203252, 0.8861788617886179],
+        "b1_valid_rate": 0.9288617886178862,
+        "fulltrace_valid_rate": 0.9451219512195121,
+        "b1_directional_coverage": 0.0,
+        "fulltrace_directional_coverage": 0.9411764705882353,
+        "b1_conditional_directional_accuracy": null,
+        "fulltrace_conditional_directional_accuracy": 0.9505208333333334
+      }
+    }
+  },
+  "relational_record": {
+    "sources": [
+      "outputs/controlled_relational_record_20260901_v1_2/run_minimax_m3/evaluation.json",
+      "outputs/controlled_relational_deepseek_replication_20260901_v1/run/evaluation.json"
+    ],
+    "evidence_hierarchy_minimax": {
+      "aggregate_record": 0.02744,
+      "relation_disrupted_record": 0.70884,
+      "relation_preserving_record": 0.80488,
+      "full_episode_record": 0.83232
+    },
+    "models": {
+      "MiniMax-M3": {
+        "relation_disrupted_record": 0.70884,
+        "relation_preserving_record": 0.80488,
+        "pooled_difference": 0.09604,
+        "pooled_ci95": [0.05030, 0.14024],
+        "recovery_difference": 0.16463,
+        "necessity_difference": 0.02744
+      },
+      "DeepSeek-V4-Flash": {
+        "relation_disrupted_record": 0.49695,
+        "relation_preserving_record": 0.63415,
+        "pooled_difference": 0.13720,
+        "pooled_ci95": [0.07622, 0.19817],
+        "recovery_difference": 0.28659,
+        "necessity_difference": -0.01220
+      }
+    },
+    "compact_to_fulltrace_length_ratio": {
+      "mean": 0.4254,
+      "minimum": 0.3109,
+      "maximum": 0.5678
+    }
+  },
+  "controlled_outer": {
+    "source": "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/all_selection_results.jsonl",
+    "generations": [0, 1, 2],
+    "pass_rates": {
+      "B2-FullTrace-LLM": [0.8125, 0.8995535714285714, 0.9386160714285714],
+      "B1-LLM": [0.515625, 0.5078125, 0.5234375],
+      "Metric selector": [0.5, 0.5357142857142857, 0.5178571428571428],
+      "Random selector": [0.4319196428571428, 0.4564732142857143, 0.5122767857142857],
+      "Hidden executable ceiling": [1.0, 1.0, 1.0]
+    },
+    "generation_2_effect": 0.4151785714285714,
+    "generation_2_effect_ci95": [0.37723214285714285, 0.4542410714285714],
+    "generation_2_sign_flip_p": 0.0078125
+  },
+  "ablation": {
+    "source": "outputs/controlled_representation_ablation_20260823_minimax_m3_v1_1/evaluation_with_posthoc_sensitivity.json",
+    "contrasts": {
+      "Temporal order removed": {
+        "pooled": 0.04420731707317073,
+        "pooled_ci95": [0.010670731707317074, 0.07926829268292683],
+        "C1": 0.0701219512195122,
+        "C2": 0.018292682926829267
+      },
+      "State values masked": {
+        "pooled": 0.051829268292682924,
+        "pooled_ci95": [0.007621951219512195, 0.09603658536585366],
+        "C1": 0.11890243902439024,
+        "C2": -0.01524390243902439
+      }
+    },
+    "quality_gate": {
+      "threshold": 0.8,
+      "passed": false,
+      "C2_fulltrace_valid_rate": 0.7890625,
+      "C2_temporal_shuffle_valid_rate": 0.7760416666666666,
+      "C2_state_masked_valid_rate": 0.7708333333333334
+    }
+  },
+  "lunarlander": {
+    "source": "outputs/lunarlander_transfer/20260824_auxiliary_combined_final_v1.json",
+    "dependence_note": "80 requirement-specific pair rows contain 29 unique policies from nine PPO training chains; inferential pair intervals are intentionally omitted.",
+    "requirements": {
+      "LL-R1": {
+        "b1_reference_rate": 0.325,
+        "densetrace_reference_rate": 0.45,
+        "b1_directional_coverage": 0.678125,
+        "densetrace_directional_coverage": 0.953125,
+        "b1_conditional_directional_accuracy": 0.4792626728110599,
+        "densetrace_conditional_directional_accuracy": 0.4721311475409836,
+        "better_equal_worse": [25, 8, 7]
+      },
+      "LL-R2": {
+        "b1_reference_rate": 0.4375,
+        "densetrace_reference_rate": 0.378125,
+        "b1_directional_coverage": 0.790625,
+        "densetrace_directional_coverage": 0.890625,
+        "b1_conditional_directional_accuracy": 0.5533596837944664,
+        "densetrace_conditional_directional_accuracy": 0.4245614035087719,
+        "better_equal_worse": [11, 11, 18]
+      }
+    }
+  }
+}

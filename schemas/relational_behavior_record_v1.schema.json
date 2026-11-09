@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/relational-behavior-record-v1.json",
+  "title": "Objective-agnostic relational behavior record",
+  "type": "object",
+  "required": [
+    "representation",
+    "provenance",
+    "completeness",
+    "coverage",
+    "semantics",
+    "patterns",
+    "loss_ledger"
+  ],
+  "properties": {
+    "representation": {
+      "const": "objective-agnostic-relational-behavior-record-v1"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "compiler",
+        "compiler_version",
+        "source_representation",
+        "source_scope",
+        "objective_access",
+        "state_timing"
+      ],
+      "properties": {
+        "compiler": {"const": "RelationalBehaviorCompiler"},
+        "compiler_version": {"const": "1.0"},
+        "source_representation": {
+          "const": "deterministic_raw_validation_trajectories"
+        },
+        "source_scope": {"const": "public_validation_evidence_only"},
+        "objective_access": {"const": false},
+        "state_timing": {"const": "post_action_observation"}
+      },
+      "additionalProperties": false
+    },
+    "completeness": {
+      "type": "object",
+      "required": [
+        "episode_set",
+        "step_set",
+        "action_event_reward_fields",
+        "state_predicate_fields",
+        "zero_value_semantics",
+        "missing_value_semantics"
+      ],
+      "additionalProperties": {"type": "string"}
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "observed_episode_count",
+        "observed_step_count",
+        "unique_episode_pattern_count"
+      ],
+      "properties": {
+        "observed_episode_count": {"type": "integer", "minimum": 1},
+        "observed_step_count": {"type": "integer", "minimum": 1},
+        "unique_episode_pattern_count": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "semantics": {
+      "type": "object",
+      "required": ["observation_scope", "relation_scope"],
+      "additionalProperties": {"type": "string"}
+    },
+    "patterns": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["context", "behavior", "multiplicity"],
+        "properties": {
+          "context": {"type": "object"},
+          "multiplicity": {"type": "integer", "minimum": 1},
+          "behavior": {
+            "type": "object",
+            "required": [
+              "length",
+              "outcome",
+              "relations",
+              "return",
+              "terminated",
+              "truncated"
+            ],
+            "properties": {
+              "length": {"type": "integer", "minimum": 1},
+              "outcome": {"type": "string"},
+              "return": {"type": "number"},
+              "terminated": {"type": "boolean"},
+              "truncated": {"type": "boolean"},
+              "relations": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": ["t", "action", "observation"],
+                  "properties": {
+                    "t": {"type": "integer", "minimum": 0},
+                    "action": {"type": ["string", "integer"]},
+                    "observation": {
+                      "type": "object",
+                      "required": [
+                        "events",
+                        "predicate_relation",
+                        "reward",
+                        "state_relation"
+                      ],
+                      "properties": {
+                        "events": {
+                          "type": "array",
+                          "items": {"type": "string"}
+                        },
+                        "reward": {"type": "number"},
+                        "predicate_relation": {"$ref": "#/$defs/fieldRelation"},
+                        "state_relation": {"$ref": "#/$defs/fieldRelation"}
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "loss_ledger": {
+      "type": "object",
+      "required": ["retained", "omitted"],
+      "properties": {
+        "retained": {"type": "array", "items": {"type": "string"}},
+        "omitted": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "fieldRelation": {
+      "type": "object",
+      "required": ["mode", "values"],
+      "properties": {
+        "mode": {"enum": ["snapshot", "delta"]},
+        "values": {"type": "object"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "behavioral-record-v2",
+  "step_fields": {
+    "state": [
+      "position",
+      "has_key",
+      "correct_key_picked",
+      "decoy_touched",
+      "door_open",
+      "near_lava"
+    ],
+    "predicates": [
+      "on_key",
+      "on_decoy",
+      "adjacent_correct_door",
+      "adjacent_wrong_door"
+    ],
+    "include_action": true,
+    "include_events": true,
+    "include_reward_bin": true,
+    "reward_bins": [-100.0, -10.0, -1.0, 0.0, 1.0, 10.0, 100.0]
+  },
+  "context_fields": ["split", "layout_seed", "slip_prob"],
+  "episode_fields": ["outcome", "return", "length", "terminated", "truncated"],
+  "aggregation": {
+    "include_token_counts": true,
+    "include_transition_counts": true,
+    "include_trace_patterns": true,
+    "include_prefix_automaton": true,
+    "include_context_groups": true,
+    "include_event_skeletons": true,
+    "max_trace_patterns": 64,
+    "max_transition_rows": 256,
+    "max_automaton_nodes": 512,
+    "max_context_groups": 64
+  },
+  "ordering": {
+    "row_sort": "count_desc_then_canonical",
+    "trace_compression": "run_length",
+    "event_skeleton_compression": "run_length",
+    "tie_break": "sha256"
+  },
+  "prompt_view": {
+    "schema_version": "prompt-view-v2",
+    "per_policy_char_budget": 32000,
+    "compact": {
+      "max_token_rows": 64,
+      "max_transition_rows": 96,
+      "max_trace_patterns": 12,
+      "max_automaton_nodes": 128,
+      "minimum_rows": {
+        "token_rows": 16,
+        "transition_rows": 16,
+        "trace_patterns": 1,
+        "automaton_nodes": 16
+      }
+    },
+    "raw_control": {
+      "selection": "context-round-robin then stable episode hash; final episode may be an explicitly marked prefix",
+      "max_match_slack_chars": 1024
+    }
+  }
+}

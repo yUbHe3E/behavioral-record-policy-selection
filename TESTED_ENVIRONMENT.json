@@ -1,0 +1,16 @@
+{
+  "python": "3.12",
+  "packages": {
+    "numpy": "2.5.2",
+    "pytest": "9.1.1",
+    "matplotlib": "3.11.1",
+    "pillow": "12.3.0",
+    "gymnasium": "1.1.1",
+    "stable-baselines3": "2.6.1a1",
+    "torch": "2.7.0+cu128",
+    "highway-env": "1.10.2",
+    "box2d": "2.3.10",
+    "minigrid": "3.1.0"
+  },
+  "note": "Versions available during the local offline reproduction checks; environment extras are optional."
+}

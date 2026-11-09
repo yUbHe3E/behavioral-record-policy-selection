@@ -1,0 +1,100 @@
+{
+  "schema": "kbs-external-validation-plan-v1",
+  "created_at": "2026-11-05",
+  "material_passport": {
+    "skill": "academic-research-suite",
+    "mode": "run",
+    "status": "design_fixed_before_new_judge_calls"
+  },
+  "environments": [
+    "LunarLander-v3",
+    "MiniGrid-ObstructedMaze-1Dlhb-v0"
+  ],
+  "original_compiler_unchanged": true,
+  "renderer": "one fixed reversible factual text template; no objective, reference, judge or raw-trajectory access",
+  "manuscript_changes": false,
+  "additional_generations": 0,
+  "minigrid_training": {
+    "method": "independent behavior-cloning curricula; not reward-trained PPO",
+    "seeds": [
+      611501,
+      621501,
+      631501,
+      641501,
+      651501,
+      661501
+    ],
+    "stages": [
+      "MiniGrid-ObstructedMaze-1Dl-v0",
+      "MiniGrid-ObstructedMaze-1Dlhb-v0"
+    ],
+    "demonstrations_per_stage": 500,
+    "epochs_per_stage": 60,
+    "target_checkpoints": [
+      8,
+      20,
+      60
+    ],
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "device": "cuda",
+    "global_timeout_seconds": 7200,
+    "official_dynamics_and_reward_unchanged": true,
+    "no_retry_or_hyperparameter_search": true
+  },
+  "external_evaluation": {
+    "lunar_policy_pool": "all 45 existing checkpoints from nine training chains",
+    "minigrid_policy_pool": "all 18 scheduled target checkpoints from six independent training chains",
+    "development_seeds": [
+      711500,
+      711501,
+      711502,
+      711503,
+      711504,
+      711505,
+      711506,
+      711507
+    ],
+    "public_seeds": [
+      721500,
+      721501,
+      721502
+    ],
+    "reference_seeds_start": 731500,
+    "reference_episodes_per_context": 16,
+    "requirements_per_environment": 2,
+    "pairs_per_environment": 40,
+    "pair_selection": "fixed from development-only factual outcomes and training-chain balance, before public/reference collection; no reference-label or judge-based reselection",
+    "presentation_orders": [
+      "AB",
+      "BA"
+    ],
+    "paraphrases": [
+      "P0",
+      "P1"
+    ],
+    "repeats": 1,
+    "primary_contrast": "original relational linked minus matched disrupted, separately per environment",
+    "minimax_arms": [
+      "Aggregate",
+      "Relational-Linked",
+      "Relational-LinkBroken",
+      "Relational-Text",
+      "Relational-TextBroken",
+      "Event-Caption",
+      "LLM-Summary"
+    ],
+    "deepseek_arms": [
+      "Relational-Linked",
+      "Relational-LinkBroken"
+    ],
+    "maximum_judge_requests": 5760,
+    "renderer_comparisons": "secondary estimates; not replacements for the original primary contrast",
+    "sampling_unit": "independent training chain; shared-policy/chain dyadic dependence retained",
+    "ambiguity": "retain and report; no replacement of ambiguous pairs",
+    "reference_scope": "fixed operational definitions from disjoint raw episodes, not unique human semantics",
+    "qualification": "compiler fidelity, meaningful behavioral variation and usable label coverage; no gate on LLM effect or aggregate prediction weakness",
+    "api_prerequisite": "actual frozen prompts, length audit and RMB cost accounting required before batch execution",
+    "network_calls_before_prerequisites": 0
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Judge response",
+  "type": "object",
+  "required": ["request_id", "winner", "confidence"],
+  "properties": {
+    "request_id": {"type": "string", "minLength": 1},
+    "winner": {"enum": ["A", "B", "TIE"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "reason": {"type": "string"}
+  },
+  "additionalProperties": true
+}

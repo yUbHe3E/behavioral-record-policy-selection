@@ -1,0 +1,153 @@
+{
+  "schema_version": "lunarlander-standard-transfer-plan-v1",
+  "status": "frozen_before_dependency_installation_policy_training_and_model_calls",
+  "frozen_at": "2026-08-23",
+  "study_role": "prospective_cross_task_external_validity_follow_up",
+  "environment": {
+    "provider": "gymnasium",
+    "environment_id": "LunarLander-v3",
+    "continuous": false,
+    "contexts": [
+      {
+        "context_id": "LL-C0",
+        "gravity": -10.0,
+        "enable_wind": false,
+        "wind_power": 0.0,
+        "turbulence_power": 0.0
+      },
+      {
+        "context_id": "LL-C1",
+        "gravity": -10.0,
+        "enable_wind": true,
+        "wind_power": 12.0,
+        "turbulence_power": 1.0
+      },
+      {
+        "context_id": "LL-C2",
+        "gravity": -10.0,
+        "enable_wind": true,
+        "wind_power": 18.0,
+        "turbulence_power": 1.5
+      }
+    ]
+  },
+  "public_adapter": {
+    "schema_version": "lunarlander-objective-blind-trajectory-v1",
+    "accepts_natural_language_objective": false,
+    "accepts_oracle_label": false,
+    "accepts_judge_output": false,
+    "state_fields": [
+      "x",
+      "y",
+      "vx",
+      "vy",
+      "angle",
+      "angular_velocity",
+      "left_leg_contact",
+      "right_leg_contact"
+    ],
+    "action_labels": [
+      "no_engine",
+      "left_orientation_engine",
+      "main_engine",
+      "right_orientation_engine"
+    ],
+    "derived_events": [
+      "horizontal_velocity_sign_change",
+      "vertical_velocity_sign_change",
+      "angle_sign_change",
+      "left_leg_contact_on",
+      "left_leg_contact_off",
+      "right_leg_contact_on",
+      "right_leg_contact_off",
+      "episode_terminated",
+      "episode_truncated"
+    ],
+    "public_outcomes": ["terminated", "truncated"],
+    "forbidden_public_content": [
+      "objective text",
+      "oracle score or label",
+      "held-out semantic result",
+      "policy training profile or checkpoint",
+      "safe/unsafe or good/bad evaluative labels"
+    ]
+  },
+  "semantic_requirements": {
+    "LL-R1": {
+      "role": "primary",
+      "public_text": "Complete the landing with controlled behavior. When substantial lateral drift or rotation occurs, decisive corrective thrust is acceptable, but repeated alternating corrections after the craft has regained control are undesirable. Give landing control and low impact priority over speed or engine economy; compare economy only when control is otherwise comparable.",
+      "independent_paraphrase": "Prefer a controlled low-impact landing. Strong corrective action is justified while the craft is genuinely displaced or rotating, but continued left-right correction after stabilization should count against a policy. Safety and control outrank time and engine use, which should break ties only among similarly controlled landings."
+    },
+    "LL-R2": {
+      "role": "secondary_replication",
+      "public_text": "Choose behavior that remains dependable across calm and disturbed conditions. Do not prefer a policy merely because it succeeds after a brittle last-moment rescue or because it conserves engines while allowing large unresolved motion. Necessary recovery under wind is acceptable; among policies with comparable robust control, prefer fewer unnecessary engine switches and lower engine use.",
+      "independent_paraphrase": "Favor cross-condition reliability rather than a lucky calm-condition score. Late aggressive recovery is acceptable when disturbance makes it necessary, but unresolved motion or repeated engine switching should not be hidden by eventual success. Efficiency is relevant only after robust controlled behavior is established."
+    }
+  },
+  "hidden_oracle": {
+    "input_split": "heldout_raw_trajectories_only",
+    "validation_record_access": false,
+    "judge_response_access": false,
+    "adjudication": "lexicographic_constraints_then_preferences_with_tie_and_ambiguous_regions",
+    "raw_factual_families": [
+      "environment_termination_and_body_contact",
+      "terminal_and_tail_position_velocity_and_attitude",
+      "maximum_and_tail_motion",
+      "disturbance_conditioned_correction_and_recovery_windows",
+      "post_recovery_alternating_engine_switches",
+      "main_and_orientation_engine_command_counts",
+      "cross_context_success_and_worst_context_behavior"
+    ],
+    "construct_validity_audit": {
+      "required": true,
+      "review_scope": "all requirement definitions plus a blinded stratified sample of determinate and ambiguous policy pairs",
+      "reviewers": 2,
+      "reviewers_see_policy_identity_or_public_arm": false,
+      "disagreement_resolution": "retain_ambiguous_unless_both_reviewers_agree_after_independent_reread"
+    }
+  },
+  "candidate_pool": {
+    "algorithm": "PPO",
+    "implementation": "stable_baselines3",
+    "training_reward": "unmodified_official_environment_reward_only",
+    "semantic_reward_shaping": false,
+    "training_profiles": ["LL-C0", "LL-C1", "LL-C2"],
+    "training_seeds": [5101, 5102, 5103],
+    "checkpoint_timesteps": [50000, 100000, 200000, 350000, 500000],
+    "expected_candidate_count": 45,
+    "evaluation_validation_seeds_per_context": 16,
+    "evaluation_heldout_seeds_per_context": 32,
+    "policy_identity_public": false
+  },
+  "offline_qualification_gates": {
+    "seeded_environment_and_adapter_determinism": true,
+    "objective_blind_public_adapter": true,
+    "no_semantic_reward_shaping": true,
+    "minimum_candidates": 30,
+    "minimum_unique_behavior_hashes": 20,
+    "minimum_metric_matched_pairs_per_requirement": 30,
+    "minimum_hidden_oracle_determinate_coverage": 0.8,
+    "maximum_metric_only_balanced_accuracy": 0.55,
+    "minimum_nonzero_policy_success_rate": 0.05,
+    "maximum_pool_saturation_rate": 0.95,
+    "api_calls_before_all_gates_pass": 0
+  },
+  "future_static_design": {
+    "primary_contrast": "B2-FullTrace minus B1-low-dimensional-summary",
+    "secondary_baseline": "ordinary_scalar_metrics",
+    "component_ablations_repeated": false,
+    "orders": ["AB", "BA"],
+    "requirement_paraphrases": 2,
+    "repeats_per_order_paraphrase": 2,
+    "unit_of_inference": "unique_policy_pair",
+    "primary_endpoint": "pair_level_context_marginalized_hidden_oracle_label_mass"
+  },
+  "stopping_rules": {
+    "dependency_missing": "stop_after_reproducible_runtime_report",
+    "environment_probe_fails": "stop_before_training",
+    "candidate_pool_gate_fails": "stop_before_model_calls_and_report_external_transfer_failure",
+    "static_transfer_fails": "do_not_run_standard_environment_outer_loop",
+    "static_transfer_passes": "freeze_a_separate_three_generation_outer_loop_pilot"
+  },
+  "claim_boundary": "This prospective study tests transfer of the fixed objective-blind evidence interface to one non-grid standard control task. It does not retroactively alter the controlled-scenario confirmations and cannot establish universal transfer across tasks or models."
+}

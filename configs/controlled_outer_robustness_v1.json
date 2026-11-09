@@ -1,0 +1,35 @@
+{
+  "schema_version": "controlled-outer-offline-robustness-plan-v1",
+  "status": "post_hoc_finite_offline_analysis",
+  "source_run": "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3",
+  "source_plan": "configs/controlled_outer_confirmatory_v3.json",
+  "source_hashes_sha256": {
+    "configs/controlled_outer_confirmatory_v3.json": "dada8cba71322316d7be5e6b6c31e268102a3489ff6c1cd44c1be79ea86663db",
+    "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/frozen_controls.json": "9b791e74cb2fc4330036650ee95bc677abcc24af2202807b710de3b324f1f725",
+    "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/all_selection_results.jsonl": "cbc9d9bc9e71c4d17f70db0ba0116c7fed43dc0b8126fdda801386b810dc8eca",
+    "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/generation_0/judge_private_map.jsonl": "56258a979e3364310e38c633d10344f8dd73f6919b8b7a1973b01340ef70a78d",
+    "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/generation_0/judge/judge_responses.jsonl": "d6dc3eddc1bbee1a3ee9536a021f89b0ccd3eaf1bfffefb6db38dfa3aa0e4f14",
+    "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/generation_0/heldout_oracle_private.jsonl": "438306afa47835561f820d4d99cf531d4a00f40ae7965ac9d1038801194e9545",
+    "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/generation_1/judge_private_map.jsonl": "51777904f7ccec81d380c249deed1c0eddebec3eaf71315c4a6d6fa8dcaaa286",
+    "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/generation_1/judge/judge_responses.jsonl": "0837573431cdd7d2497c42d1f41221cdec0b598816a36f0c7ae8c1d4876bb6ae",
+    "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/generation_1/heldout_oracle_private.jsonl": "40bd890fc69b6b2b1f8e7b9a5800b14cc69ea246519ccf03a75fdf8824cd5a28",
+    "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/generation_2/judge_private_map.jsonl": "b13a1273ec5ee407267ea66e406b1b155803cb71b3760e661c40d017f418f4b5",
+    "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/generation_2/judge/judge_responses.jsonl": "4e6e246a4aa10eab05aec3abb948c4b3bf25a06b2dd4ecb431a393dbc634f166",
+    "outputs/controlled_outer_confirmatory_20260822_minimax_m3_v3/generation_2/heldout_oracle_private.jsonl": "923102979fdf0e28dc79bb2675ee43fd2876daec0967bf61b9c5d971a6597d37"
+  },
+  "ranking_grid": {
+    "regularization": [0.01, 0.05, 0.1, 0.5, 1.0],
+    "probability_clip": [0.01, 0.025, 0.05, 0.1],
+    "exact_score_tie_break": ["policy_id", "shared_seed_hash"],
+    "reference_regularization": 0.1,
+    "reference_probability_clip": 0.05,
+    "reference_tie_break": "policy_id"
+  },
+  "difference_in_differences": {
+    "baseline_generation": 0,
+    "endpoint_generation": 2,
+    "within_seed_aggregation": "arithmetic_mean_across_scenarios",
+    "bootstrap_seed": 20260901
+  },
+  "claim_boundary": "Ranking-grid results re-rank each frozen observed candidate population with its existing responses. They do not counterfactually regenerate later populations. The generation-2 minus generation-0 difference-in-differences uses the executed frozen retention paths and is post-hoc descriptive."
+}

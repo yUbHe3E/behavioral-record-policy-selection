@@ -1,0 +1,47 @@
+{
+  "schema_version": "tpbr-v0",
+  "compiler": {
+    "symbol_sources": ["actions", "events", "outcomes"],
+    "first_hit_horizons": [1, 2, 4, 8, 16, 32, 64, 128],
+    "discount_factors": [0.5, 0.9, 0.99],
+    "quantiles": [0.01, 0.1, 0.5, 0.9, 0.99],
+    "temporal_horizons": [1, 4, 16, 64],
+    "temporal_symbol_categories": ["event", "outcome", "action"],
+    "max_temporal_symbols": 20,
+    "variable_order_max": 3,
+    "variable_order_min_support": 3,
+    "max_conditional_contexts": 160,
+    "max_next_symbols_per_context": 8,
+    "max_context_values_per_field": 16,
+    "max_context_symbols": 8,
+    "max_trace_variants": 24,
+    "max_rare_variants": 8,
+    "max_trace_grammar_rules": 96,
+    "min_trace_pair_count": 2,
+    "max_categorical_values": 16
+  },
+  "view": {
+    "schema_version": "tpbr-judge-view-v0",
+    "per_policy_char_budget": 18000,
+    "max_symbol_profiles": 64,
+    "max_signal_profiles": 64,
+    "max_context_rows": 48,
+    "max_context_symbols_per_row": 4,
+    "max_temporal_rows": 128,
+    "max_conditional_rows": 64,
+    "max_trace_variants": 12,
+    "minimum_rows": {
+      "symbol_profiles": 64,
+      "signal_profiles": 64,
+      "context_rows": 48,
+      "temporal_rows": 4,
+      "conditional_rows": 0,
+      "trace_variants": 0
+    }
+  },
+  "audit": {
+    "numeric_tolerance": 1e-12,
+    "required_core_fact_coverage": 1.0,
+    "required_included_fact_accuracy": 1.0
+  }
+}

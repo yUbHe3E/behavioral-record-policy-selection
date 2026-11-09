@@ -1,0 +1,22 @@
+{
+  "schema": "highway-finite-completion-amendment-v1",
+  "parent_output": "outputs/kbs_highway_external_v2_20261106",
+  "output": "outputs/kbs_highway_completion_20261107",
+  "deadline_iso": "2026-11-08T06:00:00+09:00",
+  "pending_job_indices": [5, 6, 7, 8, 9, 10, 11],
+  "interrupted_excluded_chains": ["highway_dqn_921604"],
+  "qualification_overrides": {
+    "minimum_chains_per_environment": 0,
+    "stop_if_remaining_chains_cannot_reach_gate": false
+  },
+  "target_qualified_chains": 10,
+  "target_is_mandatory": false,
+  "minimum_relation_decisive_pairs": 20,
+  "new_training_step_cap": 350000,
+  "training_retries": 0,
+  "additional_seeds": 0,
+  "automatic_judge_dispatch": false,
+  "api_call_cap_this_phase": 0,
+  "reason": "User authorized finishing only the seven previously unattempted chains, removing the ten-candidate hard gate while preserving capability and relational-comparison definitions. Review the completed offline cohort before deciding on model judging.",
+  "stopping_rule": "Complete every scheduled chain regardless of capability failures. Stop at the absolute deadline or an infrastructure/integrity error. No retries, new seeds, or extension."
+}

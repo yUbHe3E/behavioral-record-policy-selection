@@ -1,0 +1,265 @@
+{
+  "schema": "bounded-external-cohort-v1",
+  "created_at": "2026-11-06",
+  "limits": {
+    "training_chains": 24,
+    "elapsed_compute_seconds": 86400,
+    "judge_requests": 3168,
+    "judge_cost_cny": 600,
+    "training_retries": 0,
+    "replacement_environments": 0,
+    "judge_repeats": 1
+  },
+  "runtime": {
+    "ppo_device": "cpu",
+    "dqn_device": "cuda",
+    "torch_threads": 2,
+    "worker_concurrency": 1
+  },
+  "qualification": {
+    "minimum_chains_per_environment": 10,
+    "minimum_relation_decisive_pairs": 20,
+    "maximum_completion_rate_gap": 0.1,
+    "lunar_controlled_landing_rate": 0.7,
+    "highway_collision_free_completion_rate": 0.8,
+    "highway_mean_speed_mps": 20.0,
+    "scope": "Equal-weight mean across the two fixed evaluation contexts, estimated on development episodes only.",
+    "stop_if_remaining_chains_cannot_reach_gate": true,
+    "api_calls_before_all_environment_and_evidence_gates": 0
+  },
+  "splits": {
+    "development": {
+      "base_seed": 811600,
+      "episodes_per_context": 12
+    },
+    "validation": {
+      "base_seed": 821600,
+      "episodes_per_context": 3
+    },
+    "reference": {
+      "base_seed": 831600,
+      "episodes_per_context": 24
+    },
+    "context_seed_offset": 1000,
+    "environment_seed_offset": 100000
+  },
+  "selection": {
+    "checkpoint_rule": "Highest development mean official return, tie broken by earlier checkpoint.",
+    "checkpoints_per_chain": 3,
+    "all_qualified_pairs": true,
+    "pair_order": "stable hash of chain identifiers",
+    "reference_labels_used_to_select_candidates_or_pairs": false
+  },
+  "lunar": {
+    "environment_id": "LunarLander-v3",
+    "training_context": "calm",
+    "contexts": [
+      {
+        "context_id": "calm",
+        "gravity": -10.0,
+        "enable_wind": false,
+        "wind_power": 0.0,
+        "turbulence_power": 0.0
+      },
+      {
+        "context_id": "wind",
+        "gravity": -10.0,
+        "enable_wind": true,
+        "wind_power": 12.0,
+        "turbulence_power": 1.0
+      }
+    ],
+    "ppo_seeds": [
+      911601,
+      911603,
+      911605,
+      911607,
+      911609,
+      911611
+    ],
+    "dqn_seeds": [
+      911602,
+      911604,
+      911606,
+      911608,
+      911610,
+      911612
+    ],
+    "ppo_checkpoints": [
+      327680,
+      655360,
+      983040
+    ],
+    "dqn_checkpoints": [
+      40000,
+      70000,
+      100000
+    ],
+    "ppo": {
+      "n_steps": 1024,
+      "batch_size": 64,
+      "gae_lambda": 0.98,
+      "gamma": 0.999,
+      "n_epochs": 4,
+      "ent_coef": 0.01,
+      "learning_rate": 0.0003
+    },
+    "ppo_vector_environments": 16,
+    "dqn": {
+      "learning_rate": 0.00063,
+      "batch_size": 128,
+      "buffer_size": 50000,
+      "learning_starts": 0,
+      "gamma": 0.99,
+      "target_update_interval": 250,
+      "train_freq": 4,
+      "gradient_steps": -1,
+      "exploration_fraction": 0.12,
+      "exploration_final_eps": 0.1,
+      "policy_kwargs": {
+        "net_arch": [
+          256,
+          256
+        ]
+      }
+    },
+    "factual_definition_source": "configs/lunarlander_semantic_gate_v1.json",
+    "reference_requirement": "LL-R1",
+    "relation_decisive_fields": [
+      "post_recovery_alternation_episode_rate"
+    ],
+    "requirement_source": "configs/lunarlander_transfer_v1.json"
+  },
+  "highway": {
+    "environment_id": "highway-fast-v0",
+    "package_version": "1.10.2",
+    "contexts": [
+      {
+        "context_id": "light",
+        "vehicles_density": 0.8
+      },
+      {
+        "context_id": "dense",
+        "vehicles_density": 1.2
+      }
+    ],
+    "seeds": [
+      921601,
+      921602,
+      921603,
+      921604,
+      921605,
+      921606,
+      921607,
+      921608,
+      921609,
+      921610,
+      921611,
+      921612
+    ],
+    "training_context_assignment": "first six light, final six dense",
+    "checkpoints": [
+      20000,
+      35000,
+      50000
+    ],
+    "dqn": {
+      "policy_kwargs": {
+        "net_arch": [
+          256,
+          256
+        ]
+      },
+      "learning_rate": 0.0005,
+      "buffer_size": 15000,
+      "learning_starts": 200,
+      "batch_size": 32,
+      "gamma": 0.8,
+      "train_freq": 1,
+      "gradient_steps": 1,
+      "target_update_interval": 50
+    },
+    "requirements": [
+      "Maintain safe, useful progress through traffic. A lane change is justified when a slower vehicle constrains the current lane and the destination lane has adequate front and rear space. Once progress is restored, avoid repeated back-and-forth changes without renewed obstruction. Prioritize collision avoidance; do not obtain apparent safety merely by persistently driving too slowly.",
+      "Prefer dependable progress without collisions. Moving around a slower lead vehicle is reasonable when there is room in the adjacent lane, but returning and switching again after traffic clears should count against a policy. Judge these actions in their traffic context, while also penalizing persistently low progress."
+    ],
+    "reference_rules": {
+      "lexicographic_fields": [
+        [
+          "completion_rate",
+          "maximize",
+          0.0625
+        ],
+        [
+          "low_progress_episode_rate",
+          "minimize",
+          0.1
+        ],
+        [
+          "unsafe_change_episode_rate",
+          "minimize",
+          0.1
+        ],
+        [
+          "unnecessary_reversal_episode_rate",
+          "minimize",
+          0.1
+        ],
+        [
+          "mean_progress_meters",
+          "maximize",
+          30.0
+        ]
+      ]
+    },
+    "relation_decisive_fields": [
+      "unsafe_change_episode_rate",
+      "unnecessary_reversal_episode_rate"
+    ],
+    "operationalization": {
+      "lead_gap_seconds": 2.0,
+      "lead_speed_difference_mps": 2.0,
+      "minimum_front_gap_meters": 10.0,
+      "front_gap_seconds": 1.5,
+      "minimum_rear_gap_meters": 10.0,
+      "rear_gap_seconds": 1.0,
+      "reversal_window_seconds": 6.0,
+      "low_progress_speed_mps": 20.0
+    }
+  },
+  "evidence": {
+    "compiler_source": "src/behavioral_records/relational_record.py",
+    "same_observations_for_all_arms": true,
+    "maximum_pair_prompt_utf8_bytes": 250000,
+    "token_context_and_full_batch_cost_audit_required": true,
+    "event_neighborhoods_must_remain_complete": true,
+    "stop_on_evidence_gate_failure": true
+  },
+  "judges": {
+    "minimax_arms": [
+      "Relational-Linked",
+      "Relational-LinkBroken",
+      "Aggregate",
+      "Event-Caption"
+    ],
+    "deepseek_arms": [
+      "Relational-Linked",
+      "Relational-LinkBroken"
+    ],
+    "orders": [
+      "AB",
+      "BA"
+    ],
+    "paraphrases": [
+      "P0",
+      "P1"
+    ],
+    "unresolved_on_determinate_reference_score": 0,
+    "uncertainty_unit": "independent training chain, dyadic dependence retained"
+  },
+  "sources": [
+    "https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/ppo.yml",
+    "https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/dqn.yml",
+    "https://highway-env.farama.org/quickstart/"
+  ]
+}

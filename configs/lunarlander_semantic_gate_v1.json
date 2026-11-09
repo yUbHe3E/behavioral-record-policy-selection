@@ -1,0 +1,137 @@
+{
+  "schema_version": "lunarlander-semantic-offline-gate-v1",
+  "status": "frozen_before_heldout_collection_and_semantic_adjudication",
+  "frozen_at": "2026-08-23",
+  "source": {
+    "transfer_config_path": "configs/lunarlander_transfer_v1.json",
+    "training_config_path": "configs/lunarlander_policy_pool_training_v1.json",
+    "formal_run_dir": "outputs/lunarlander_transfer/20260823_policy_pool_formal_v1",
+    "expected_training_summary_hash": "5f7b6ac52322011970dbdc53f2d7edd65a99c2c611a9499a2a405d3c02e6b5d4"
+  },
+  "heldout_collection": {
+    "episodes_per_context": 32,
+    "seed_bases": {
+      "LL-C0": 810000,
+      "LL-C1": 820000,
+      "LL-C2": 830000
+    },
+    "deterministic_actions": true,
+    "storage": "one_private_gzip_jsonl_per_candidate",
+    "accepts_validation_record": false,
+    "accepts_natural_language_objective": false,
+    "accepts_judge_response": false
+  },
+  "factual_operationalization": {
+    "substantial_motion": {
+      "absolute_x": 0.25,
+      "absolute_vx": 0.20,
+      "absolute_angle": 0.25,
+      "absolute_angular_velocity": 0.20
+    },
+    "regained_control": {
+      "absolute_x": 0.15,
+      "absolute_vx": 0.12,
+      "absolute_angle": 0.15,
+      "absolute_angular_velocity": 0.12,
+      "consecutive_steps": 5,
+      "alternation_max_gap_steps": 10
+    },
+    "controlled_first_contact": {
+      "speed": 0.35,
+      "absolute_angle": 0.35,
+      "absolute_angular_velocity": 0.35
+    },
+    "unresolved_terminal_motion": {
+      "speed": 0.30,
+      "absolute_angle": 0.30,
+      "absolute_angular_velocity": 0.30
+    },
+    "brittle_late_rescue": {
+      "tail_steps": 20,
+      "motion_speed": 0.35,
+      "absolute_angle": 0.35,
+      "minimum_engine_switches": 6
+    }
+  },
+  "hidden_oracle": {
+    "LL-R1": {
+      "lexicographic_fields": [
+        ["controlled_landing_rate", "maximize", 0.0625],
+        ["catastrophic_termination_rate", "minimize", 0.0625],
+        ["post_recovery_alternation_episode_rate", "minimize", 0.10],
+        ["first_contact_severity_p90", "minimize", 0.10],
+        ["engine_command_fraction", "minimize", 0.03]
+      ]
+    },
+    "LL-R2": {
+      "lexicographic_fields": [
+        ["worst_context_controlled_landing_rate", "maximize", 0.0625],
+        ["cross_context_controlled_landing_range", "minimize", 0.0625],
+        ["worst_context_catastrophic_termination_rate", "minimize", 0.0625],
+        ["brittle_late_rescue_rate", "minimize", 0.10],
+        ["unresolved_terminal_motion_rate", "minimize", 0.10],
+        ["engine_switch_fraction", "minimize", 0.02],
+        ["engine_command_fraction", "minimize", 0.03]
+      ]
+    }
+  },
+  "metric_matching": {
+    "representation": "objective_blind_low_dimensional_aggregate_v1",
+    "eligible_nearest_pair_fraction": 0.15,
+    "selected_pairs_per_requirement": 40,
+    "selection_order": "ascending_standardized_rms_distance_then_stable_hash",
+    "features": [
+      "success_rate",
+      "mean_return",
+      "return_standard_deviation",
+      "mean_length",
+      "length_standard_deviation",
+      "termination_rate",
+      "no_engine_fraction",
+      "main_engine_fraction",
+      "orientation_engine_fraction",
+      "horizontal_velocity_sign_changes_per_step",
+      "angle_sign_changes_per_step",
+      "contact_changes_per_step",
+      "LL-C0.success_rate",
+      "LL-C0.mean_return",
+      "LL-C0.mean_length",
+      "LL-C1.success_rate",
+      "LL-C1.mean_return",
+      "LL-C1.mean_length",
+      "LL-C2.success_rate",
+      "LL-C2.mean_return",
+      "LL-C2.mean_length"
+    ],
+    "metric_only_diagnostic": {
+      "model": "l2_logistic_regression_on_oriented_metric_differences",
+      "candidate_disjoint_folds": 5,
+      "fold_assignment": "stable_hash_candidate_id_modulo_5",
+      "iterations": 2000,
+      "learning_rate": 0.05,
+      "l2": 1.0
+    }
+  },
+  "qualification_gates": {
+    "minimum_metric_matched_pairs_per_requirement": 30,
+    "minimum_hidden_oracle_determinate_coverage": 0.80,
+    "maximum_metric_only_balanced_accuracy": 0.55,
+    "minimum_paraphrase_label_agreement": 1.0,
+    "human_construct_validity_reviewers": 2,
+    "api_calls_before_all_offline_gates_pass": 0
+  },
+  "construct_validity_packet": {
+    "pairs_per_requirement": 12,
+    "include_determinate_and_ambiguous": true,
+    "reveal_candidate_identity": false,
+    "reveal_automatic_oracle_label": false,
+    "required_reviewer_response": ["A", "B", "TIE", "AMBIGUOUS"],
+    "status_before_human_review": "PENDING_HUMAN_CONSTRUCT_VALIDITY_AUDIT"
+  },
+  "sensitivity_analysis": {
+    "margin_multipliers": [0.8, 1.0, 1.2],
+    "minimum_label_agreement_with_frozen_oracle": 0.80
+  },
+  "stopping_rule": "Do not call an LLM if collection integrity, pair count, determinate coverage, metric-only accuracy, paraphrase agreement, sensitivity, or the required two-reviewer construct audit fails or remains incomplete.",
+  "claim_boundary": "The executable oracle is a prospectively frozen operationalization and not proof of a unique natural-language interpretation. Semantic ground-truth validity requires agreement across independent paraphrases, threshold sensitivity, and a blinded two-reviewer construct audit."
+}

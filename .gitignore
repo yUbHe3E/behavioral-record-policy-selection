@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+.env
+.env.*
+!.env.example
+outputs/
+reproduced/
+reproduced_primary/
+generated_figures/
+*.log
+sha256.json
+evidence_manifest.json
+*.zip

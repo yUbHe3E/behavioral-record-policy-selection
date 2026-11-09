@@ -1,0 +1,90 @@
+{
+  "schema_version": "controlled-representation-ablation-plan-v1.1",
+  "version_label": "controlled_representation_ablation_v1_1",
+  "request_namespace": "ablation_v1_1",
+  "status": "frozen_before_v1_1_request_generation_and_model_calls",
+  "frozen_at": "2026-08-23",
+  "study_role": "prospective_post_confirmatory_mechanistic_follow_up",
+  "amends_failed_plan": "configs/controlled_representation_ablation_v1.json",
+  "failed_bundle": "outputs/controlled_representation_ablation_20260823_v1",
+  "amendment_reason": "The v1 offline bundle made no model calls and failed only because the largest StateMasked prompt was 70423 characters, 423 above the frozen 70000-character gate. V1.1 shortens only the value-mask spellings while preserving their type labels.",
+  "state_mask_token_profile": "compact_type_tags_v1",
+  "source_bundle": "outputs/controlled_confirmatory_20260822_v1",
+  "source_hashes_sha256": {
+    "judge_requests.jsonl": "375f1797b4d409e59f7f420eb5055f980a2d26b48fade87913ab27f9ffe289fb",
+    "judge_private_map.jsonl": "c0f338b70077b3615e40bfd5a5e9d40301d566a0004943a19d16ec9e2eac0238",
+    "C1/public_evidence.jsonl": "de0fece735a655e25b5019a6427df262712370a45c7430ce7887172e3ac93e77",
+    "C2/public_evidence.jsonl": "c7d4fee81b99e3c15b693b62f0468f17d3934fc8125a8430589fcb7218532ce2"
+  },
+  "scenario_config": "configs/controlled_scenarios_confirmatory_v1.json",
+  "scenario_config_file_sha256": "3e1c2f764ca388362ab5ccf76fbc2257f6353f7b5f3cbbd61738906c3e5844ac",
+  "design": {
+    "scenarios": ["C1", "C2"],
+    "pair_count_per_scenario": 48,
+    "total_unique_pairs": 96,
+    "arms": [
+      "B2-FullTrace-Control",
+      "B2-TemporalShuffle",
+      "B2-StateMasked"
+    ],
+    "requirement_paraphrases": 2,
+    "orders": ["AB", "BA"],
+    "repeats_per_order_paraphrase": 2,
+    "requests_per_arm": 768,
+    "expected_total_requests": 2304,
+    "unit_of_inference": "unique_policy_pair",
+    "previous_static_responses_reused_in_primary_ablation_analysis": false
+  },
+  "arm_definitions": {
+    "B2-FullTrace-Control": "Unchanged source FullTrace evidence, rerun contemporaneously.",
+    "B2-TemporalShuffle": "Within each episode, deterministically permute complete step records and reassign t to the displayed order; retain the exact multiset of non-t step content and exact serialized character count, while labeling the representation as lacking temporal order.",
+    "B2-StateMasked": "Preserve episode context, action/event sequence, reward, outcome, and field names; replace every step-state and predicate value with compact type-labelled tokens: <N>, <B>, <S>, <0>, <A>, or <O>."
+  },
+  "compiler_rules": {
+    "accepts_natural_language_objective": false,
+    "uses_oracle_label": false,
+    "uses_model_output": false,
+    "deterministic": true,
+    "policy_identity_in_public_prompt": false
+  },
+  "offline_gates": {
+    "source_hashes_match": true,
+    "all_96_source_pairs_retained": true,
+    "temporal_shuffle_non_t_step_multiset_exact": true,
+    "temporal_shuffle_serialized_character_count_exact": true,
+    "state_mask_non_state_fields_exact": true,
+    "state_and_predicate_field_names_retained": true,
+    "all_state_and_predicate_values_masked": true,
+    "maximum_prompt_characters": 70000,
+    "no_hidden_oracle_or_policy_identity_leakage": true
+  },
+  "judge_freeze": {
+    "provider": "minimax",
+    "model": "MiniMax-M3",
+    "thinking": "disabled",
+    "temperature": 0.1,
+    "max_output_tokens": 512,
+    "response_format_type": "json_object",
+    "automatic_retries": 0,
+    "max_concurrency": 1,
+    "maximum_cost_usd": 10.0
+  },
+  "primary_analysis": {
+    "endpoint": "pair_level_context_marginalized_hidden_oracle_label_mass",
+    "contrasts": [
+      "B2-FullTrace-Control minus B2-TemporalShuffle",
+      "B2-FullTrace-Control minus B2-StateMasked"
+    ],
+    "test": "exact_two_sided_pair_sign_flip",
+    "confidence_interval": "10000_draw_pair_bootstrap_95_percentile",
+    "familywise_adjustment": "Holm_across_two_primary_component_contrasts",
+    "alpha": 0.05,
+    "invalid_response_score": 0
+  },
+  "interpretation_rules": {
+    "temporal_contribution_supported": "positive FullTrace-minus-TemporalShuffle mean and Holm-adjusted p below 0.05",
+    "state_contribution_supported": "positive FullTrace-minus-StateMasked mean and Holm-adjusted p below 0.05",
+    "neither_supported": "Do not claim a component-specific mechanism; retain only the already-confirmed FullTrace-versus-B1 representation effect."
+  },
+  "claim_boundary": "This new batch is a prospectively frozen mechanistic follow-up after the main B2-versus-B1 result was observed. It cannot retroactively become part of the original confirmatory primary analysis. V1.1 differs from the no-call v1 failure only in compact type-mask spellings."
+}

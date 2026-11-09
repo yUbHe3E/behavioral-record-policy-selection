@@ -1,0 +1,111 @@
+{
+  "schema_version": "controlled-relational-record-plan-v1.2",
+  "version_label": "controlled_relational_record_v1_2",
+  "request_namespace": "relational_v1",
+  "status": "frozen_before_request_generation_and_model_calls",
+  "frozen_at": "2026-09-01",
+  "study_role": "prospective_relation_preservation_follow_up",
+  "source_bundle": "outputs/controlled_confirmatory_20260822_v1",
+  "source_hashes_sha256": {
+    "outputs/controlled_confirmatory_20260822_v1/C1/public_evidence.jsonl": "de0fece735a655e25b5019a6427df262712370a45c7430ce7887172e3ac93e77",
+    "outputs/controlled_confirmatory_20260822_v1/C2/public_evidence.jsonl": "c7d4fee81b99e3c15b693b62f0468f17d3934fc8125a8430589fcb7218532ce2",
+    "outputs/controlled_confirmatory_20260822_v1/C1/pair_manifest_private.json": "41ebb9942109f2856ddc1cbc260149aea01a74a4c64c51f047a699400e6c52fb",
+    "outputs/controlled_confirmatory_20260822_v1/C2/pair_manifest_private.json": "582b06a846ac3029410122b88126982700d9b0aab5091a9f536d49b26f9ee395",
+    "outputs/controlled_confirmatory_20260822_v1/C1/oracle_adjudication.json": "01794e16a5ea38a48648a88d3fabab542a2972f92300c8b6aec44be7ca485916",
+    "outputs/controlled_confirmatory_20260822_v1/C2/oracle_adjudication.json": "bdd7d2615eafa00838d655f2d742e9be8e93d8fe14f7a08e8e93e435315aa46c"
+  },
+  "scenario_config": "configs/controlled_scenarios_confirmatory_v1.json",
+  "scenario_config_file_sha256": "3e1c2f764ca388362ab5ccf76fbc2257f6353f7b5f3cbbd61738906c3e5844ac",
+  "record_schema": "schemas/relational_behavior_record_v1.schema.json",
+  "record_schema_file_sha256": "e20d75d48a31e481b3a9d23cda11442b685a3b2e8115c3e6e28bfa4750214486",
+  "design": {
+    "scenarios": ["C1", "C2"],
+    "pair_count_per_scenario": 48,
+    "total_unique_pairs": 96,
+    "arms": [
+      "Aggregate-Control",
+      "Relational-LinkBroken",
+      "Relational-Linked",
+      "FullTrace-Control"
+    ],
+    "requirement_paraphrases": 2,
+    "orders": ["AB", "BA"],
+    "repeats_per_cell": 2,
+    "requests_per_arm": 768,
+    "expected_total_requests": 3072,
+    "unit_of_inference": "unique_policy_pair",
+    "all_arms_rerun_contemporaneously": true
+  },
+  "representation": {
+    "name": "objective-agnostic relational behavior record",
+    "input": "frozen public validation FullTrace only",
+    "deduplication": "exact repeated episode patterns with multiplicity retained",
+    "relations": "context-to-behavior, ordered action-to-same-step observation, and previous-to-current state/predicate change",
+    "causal_claim": false,
+    "accepts_natural_language_objective": false,
+    "uses_oracle_label": false,
+    "uses_model_output": false,
+    "policy_identity_in_public_prompt": false
+  },
+  "primary_control": {
+    "name": "Relational-LinkBroken",
+    "construction": "Rotate complete behavior payloads across context rows and rotate only interior action labels across fixed time/observation rows; keep first/last boundary actions and snapshot/delta structure fixed.",
+    "matched_properties": [
+      "top-level schema and loss ledger",
+      "context multiset",
+      "multiplicity multiset",
+      "behavior-summary multiset",
+      "action multiset and time-axis multiset",
+      "observation-payload multiset",
+      "canonical serialized character count"
+    ],
+    "changed_property": "bindings among contexts, behaviors, and interior actions with their time-indexed observations"
+  },
+  "offline_gates": {
+    "source_hashes_match": true,
+    "all_96_source_pairs_retained": true,
+    "all_atomic_fact_multisets_exact_between_relational_arms": true,
+    "canonical_character_count_exact_between_relational_arms": true,
+    "at_least_one_relation_assignment_changed_per_policy": true,
+    "relational_record_smaller_than_fulltrace_for_every_policy": true,
+    "maximum_prompt_characters": 70000,
+    "no_hidden_oracle_or_policy_identity_leakage": true
+  },
+  "judge_freeze": {
+    "provider": "minimax",
+    "model": "MiniMax-M3",
+    "base_url": "https://api.minimaxi.com/v1",
+    "credential_environment_variable": "MINIMAX_API_KEY",
+    "thinking": "disabled",
+    "temperature": 0.1,
+    "max_output_tokens": 512,
+    "response_format_type": "json_object",
+    "automatic_retries": 0,
+    "max_concurrency": 1,
+    "timeout_seconds": 120.0,
+    "input_accounting_rate_usd_per_million_tokens": 0.3,
+    "output_accounting_rate_usd_per_million_tokens": 1.2,
+    "maximum_cost_usd": 15.0
+  },
+  "primary_analysis": {
+    "endpoint": "pair_level_context_marginalized_hidden_oracle_label_mass",
+    "contrast": "Relational-Linked minus Relational-LinkBroken",
+    "test": "exact_or_monte_carlo_two_sided_pair_sign_flip",
+    "confidence_interval": "10000_draw_pair_bootstrap_95_percentile",
+    "alpha": 0.05,
+    "minimum_valid_response_rate_per_scenario_arm": 0.8,
+    "invalid_response_score": 0
+  },
+  "secondary_analyses": [
+    "Relational-Linked minus Aggregate-Control",
+    "FullTrace-Control minus Relational-Linked",
+    "FullTrace-Control minus Aggregate-Control",
+    "scenario-specific effect estimates without treating scenarios as independent replications"
+  ],
+  "success_and_stop_rules": {
+    "support_relation_contribution": "The primary mean is positive and its paired sign-flip p value is below 0.05 after the response-validity gate passes.",
+    "no_support": "Do not claim a relation-specific gain if the primary contrast is non-positive or fails its frozen test.",
+    "stop_after_batch": "Do not add environments, generations, prompts, or representation variants solely because the result is unfavorable; only repair a documented execution or integrity failure."
+  },
+  "claim_boundary": "This prospectively frozen follow-up tests whether correct relation bindings, rather than text volume alone, improve model selection against the existing held-out operational reference. It does not establish human preference alignment, causal understanding, or universal task generality."
+}

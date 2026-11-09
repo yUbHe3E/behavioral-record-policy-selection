@@ -1,0 +1,67 @@
+{
+  "schema_version": "lunarlander-policy-pool-training-v1",
+  "status": "frozen_after_cpu_cuda_smoke_benchmark_before_formal_execution",
+  "frozen_at": "2026-08-23",
+  "source_transfer_config": {
+    "path": "configs/lunarlander_transfer_v1.json",
+    "expected_config_hash": "94d0fd068e8726c35777a117689357a2d70eacfd36dcade003abed8d962532c2"
+  },
+  "training": {
+    "algorithm": "PPO",
+    "policy": "MlpPolicy",
+    "device": "cpu",
+    "official_environment_reward_only": true,
+    "semantic_reward_shaping": false,
+    "vector_environments": 8,
+    "profiles": ["LL-C0", "LL-C1", "LL-C2"],
+    "seeds": [5101, 5102, 5103],
+    "checkpoint_timesteps": [50000, 100000, 200000, 350000, 500000],
+    "ppo": {
+      "learning_rate": 0.0003,
+      "n_steps": 625,
+      "batch_size": 250,
+      "n_epochs": 4,
+      "gamma": 0.999,
+      "gae_lambda": 0.98,
+      "clip_range": 0.2,
+      "ent_coef": 0.01,
+      "vf_coef": 0.5,
+      "max_grad_norm": 0.5
+    }
+  },
+  "validation": {
+    "split": "validation",
+    "deterministic_actions": true,
+    "episodes_per_context": 16,
+    "seed_bases": {
+      "LL-C0": 710000,
+      "LL-C1": 720000,
+      "LL-C2": 730000
+    },
+    "success_definition_for_pool_diagnostic_only": "official_episode_return_at_least_200",
+    "export_objective_blind_full_trajectories": true
+  },
+  "heldout_reservation": {
+    "episodes_per_context": 32,
+    "seed_bases": {
+      "LL-C0": 810000,
+      "LL-C1": 820000,
+      "LL-C2": 830000
+    },
+    "collect_during_policy_pool_training": false,
+    "reason": "Held-out raw trajectories remain untouched until the candidate pool and pair-construction gates pass."
+  },
+  "monitoring": {
+    "heartbeat_seconds": 30,
+    "automatic_retry": false,
+    "overwrite_existing_output": false
+  },
+  "smoke_override": {
+    "profiles": ["LL-C0"],
+    "seeds": [9101],
+    "checkpoint_timesteps": [10000],
+    "validation_episodes_per_context": 2,
+    "claim_status": "engineering_smoke_only_not_research_evidence"
+  },
+  "claim_boundary": "Training and validation create the frozen candidate pool using only official reward. They do not establish semantic selection improvement and make zero LLM API calls."
+}

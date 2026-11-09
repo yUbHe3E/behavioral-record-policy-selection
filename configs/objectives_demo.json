@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dev_safe_then_fast",
+    "split": "development",
+    "natural_language": "Choose a policy that reaches the goal after picking the correct key and opening the correct door in at least 80% of episodes, keeps lava deaths at or below 10%, and then prefers shorter behavior.",
+    "constraints": [
+      {"metric": {"kind": "sequence_rate", "sequence": ["correct_key_picked", "correct_door_opened", "goal_reached"]}, "op": ">=", "value": 0.8},
+      {"metric": {"kind": "event_rate", "event": "lava_death"}, "op": "<=", "value": 0.1}
+    ],
+    "preferences": [
+      {"metric": {"kind": "mean", "field": "length"}, "direction": "min", "priority": 1},
+      {"metric": {"kind": "mean", "field": "return"}, "direction": "max", "priority": 2}
+    ]
+  },
+  {
+    "id": "heldout_robust_conditional",
+    "split": "heldout",
+    "natural_language": "Select a policy that succeeds in at least 80% of high-slip episodes, never exceeds a 10% overall lava-death rate, follows the key-door-goal order in at least 80% of all episodes, and among feasible policies is as short as possible.",
+    "constraints": [
+      {"metric": {"kind": "conditional_event_rate", "event": "goal_reached", "where": {"field": "slip_prob", "op": ">=", "value": 0.3}}, "op": ">=", "value": 0.8},
+      {"metric": {"kind": "event_rate", "event": "lava_death"}, "op": "<=", "value": 0.1},
+      {"metric": {"kind": "sequence_rate", "sequence": ["correct_key_picked", "correct_door_opened", "goal_reached"]}, "op": ">=", "value": 0.8}
+    ],
+    "preferences": [
+      {"metric": {"kind": "mean", "field": "length"}, "direction": "min", "priority": 1},
+      {"metric": {"kind": "mean", "field": "return"}, "direction": "max", "priority": 2}
+    ]
+  },
+  {
+    "id": "heldout_anti_loop",
+    "split": "heldout",
+    "natural_language": "Choose a policy that reaches the goal in at least 80% of episodes while averaging no more than half a reward-loop interaction per episode; then prefer fewer steps.",
+    "constraints": [
+      {"metric": {"kind": "event_rate", "event": "goal_reached"}, "op": ">=", "value": 0.8},
+      {"metric": {"kind": "event_count_mean", "event": "reward_loop_step"}, "op": "<=", "value": 0.5}
+    ],
+    "preferences": [
+      {"metric": {"kind": "mean", "field": "length"}, "direction": "min", "priority": 1}
+    ]
+  }
+]
+
